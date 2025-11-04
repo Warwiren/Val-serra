@@ -1,0 +1,34 @@
+{
+  "Actor": {
+    "types": ["personnage"],
+    "templates": {
+      "base": {
+        "data": {
+          "caracteristiques": {
+            "force": 0,
+            "dexterite": 0,
+            "constitution": 0,
+            "intelligence": 0,
+            "sagesse": 0,
+            "charisme": 0
+          },
+          "competences": {
+            "intimidation": { "valeur": 0, "rang": "non-entrainé" },
+            "acrobatie": { "valeur": 0, "rang": "non-entrainé" },
+            "volonte": { "valeur": 0, "rang": "non-entrainé" },
+            "nature": { "valeur": 0, "rang": "non-entrainé" },
+            "diplomatie": { "valeur": 0, "rang": "non-entrainé" },
+            "discretion": { "valeur": 0, "rang": "non-entrainé" },
+            "arcane": { "valeur": 0, "rang": "non-entrainé" },
+            "medecine": { "valeur": 0, "rang": "non-entrainé" },
+            "performance": { "valeur": 0, "rang": "non-entrainé" },
+            "histoire": { "valeur": 0, "rang": "non-entrainé" },
+            "survie": { "valeur": 0, "rang": "non-entrainé" },
+            "perception": { "valeur": 0, "rang": "non-entrainé" },
+            "intuition": { "valeur": 0, "rang": "non-entrainé" }
+          }
+        }
+      }
+    }
+  }
+}

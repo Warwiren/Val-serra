@@ -1,0 +1,21 @@
+{
+  "id": "valserra",
+  "title": "Val'serra",
+  "description": "Système personnalisé pour l'univers de Valserra.",
+  "version": "0.1.0",
+  "compatibility": {
+    "minimum": "11",
+    "verified": "12"
+  },
+  "esmodules": ["module/main.js"],
+  "styles": ["styles/style.css"],
+  "templateVersion": 1,
+  "scripts": [],
+  "authors": [{
+    "name": "Warwiren",
+    "url": "https://github.com/Warwiren"
+  }],
+  "manifest": "",
+  "download": "",
+  "license": "LICENSE.txt"
+}

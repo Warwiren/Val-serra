@@ -1,0 +1,39 @@
+<form class="actor-sheet">
+  <h1>{{actor.name}}</h1>
+
+  <h2>Caractéristiques principales</h2>
+  <table>
+    <tr>
+      {{#each caracteristiques}}
+        <td>
+          <label>{{@key}}</label>
+          <input type="number" name="system.caracteristiques.{{@key}}" value="{{this}}" />
+        </td>
+      {{/each}}
+    </tr>
+  </table>
+
+  <h2>Compétences</h2>
+  <table>
+    <tr>
+      <th>Nom</th>
+      <th>Valeur</th>
+      <th>Rang</th>
+    </tr>
+    {{#each competences}}
+    <tr>
+      <td>{{@key}}</td>
+      <td><input type="number" name="system.competences.{{@key}}.valeur" value="{{this.valeur}}" /></td>
+      <td>
+        <select name="system.competences.{{@key}}.rang">
+          <option value="non-entrainé" {{#if (eq this.rang "non-entrainé")}}selected{{/if}}>Non-entrainé</option>
+          <option value="novice" {{#if (eq this.rang "novice")}}selected{{/if}}>Novice</option>
+          <option value="intermédiaire" {{#if (eq this.rang "intermédiaire")}}selected{{/if}}>Intermédiaire</option>
+          <option value="expert" {{#if (eq this.rang "expert")}}selected{{/if}}>Expert</option>
+          <option value="maitre" {{#if (eq this.rang "maitre")}}selected{{/if}}>Maître</option>
+        </select>
+      </td>
+    </tr>
+    {{/each}}
+  </table>
+</form>

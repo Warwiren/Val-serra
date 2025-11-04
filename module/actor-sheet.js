@@ -1,4 +1,4 @@
-export class GrimoireActorSheet extends ActorSheet {
+export class GrimoireActorSheet extends foundry.appv1.sheets.ActorSheet {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       classes: ["valserra", "sheet", "actor"],

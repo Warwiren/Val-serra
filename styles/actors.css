@@ -1,0 +1,306 @@
+/**
+ * Styles spécifiques aux acteurs - Thème Gothique
+ */
+
+/* Points de Vie - Style pentagon/bouclier */
+.valserra .pv-section {
+  background: var(--valserra-bg-dark);
+  border: var(--valserra-border-width) solid var(--valserra-border);
+  padding: var(--valserra-spacing-lg);
+  margin-bottom: var(--valserra-spacing-lg);
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+}
+
+.valserra .pv-section h3 {
+  color: var(--valserra-light);
+  border-bottom: var(--valserra-border-width) solid rgba(255, 255, 255, 0.3);
+  margin-top: 0;
+  text-align: center;
+  font-size: 12px;
+}
+
+.valserra .pv-fields {
+  display: flex;
+  flex-direction: column;
+  gap: var(--valserra-spacing-sm);
+  align-items: center;
+  margin-top: var(--valserra-spacing-md);
+}
+
+.valserra .pv-fields .field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.valserra .pv-fields .field label {
+  font-size: 9px;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: var(--valserra-spacing-xs);
+  color: rgba(240, 240, 245, 0.7);
+  letter-spacing: 1px;
+}
+
+.valserra .pv-fields .field input {
+  width: 100%;
+  max-width: 120px;
+  padding: var(--valserra-spacing-md);
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  border: var(--valserra-border-width) solid var(--valserra-border);
+  background: var(--valserra-bg-primary);
+  color: var(--valserra-danger);
+  border-radius: 0;
+  transition: var(--valserra-transition);
+}
+
+.valserra .pv-fields .field input:focus {
+  outline: none;
+  box-shadow: var(--valserra-shadow-glow);
+}
+
+.valserra .pv-fields .separator {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--valserra-light);
+  margin: var(--valserra-spacing-xs) 0;
+}
+
+/* Caractéristiques - Style circulaire */
+.valserra .caracteristiques-section {
+  margin: 0;
+  width: 100%;
+}
+
+.valserra .caracteristiques-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: var(--valserra-spacing-xs);
+  margin-top: var(--valserra-spacing-xs);
+  width: 100%;
+}
+
+.valserra .caracteristique {
+  background: var(--valserra-bg-dark);
+  border: var(--valserra-border-width) solid var(--valserra-border);
+  padding: var(--valserra-spacing-xs);
+  text-align: center;
+  transition: var(--valserra-transition);
+  position: relative;
+}
+
+.valserra .caracteristique:hover {
+  border-color: var(--valserra-accent);
+  box-shadow: var(--valserra-shadow-glow);
+}
+
+.valserra .caracteristique label {
+  display: block;
+  font-size: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: rgba(240, 240, 245, 0.7);
+  margin-bottom: var(--valserra-spacing-sm);
+  letter-spacing: 1px;
+}
+
+.valserra .caracteristique .carac-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--valserra-spacing-sm);
+  align-items: center;
+}
+
+.valserra .caracteristique input {
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  border: var(--valserra-border-width) solid var(--valserra-border);
+  background: var(--valserra-bg-primary);
+  color: var(--valserra-light);
+  border-radius: 50%;
+}
+
+.valserra .caracteristique button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: transparent;
+  border: var(--valserra-border-width) solid var(--valserra-border);
+  color: var(--valserra-accent);
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: var(--valserra-transition);
+}
+
+.valserra .caracteristique button:hover {
+  background: var(--valserra-accent);
+  color: var(--valserra-dark);
+  box-shadow: var(--valserra-shadow-glow);
+}
+
+.valserra .caracteristique .modifier {
+  display: block;
+}
+
+/* Compétences - Style liste */
+.valserra .competences-section {
+  margin: 0;
+  width: 100%;
+}
+
+.valserra .competences-table td.comp-name {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.valserra .competences-table td.center {
+  text-align: center;
+}
+
+.valserra .competences-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: var(--valserra-spacing-xs);
+  background: var(--valserra-bg-dark);
+  border: var(--valserra-border-width) solid var(--valserra-border);
+  table-layout: fixed;
+}
+
+.valserra .competences-table thead {
+  background: var(--valserra-bg-secondary);
+  border-bottom: var(--valserra-border-width) solid var(--valserra-border);
+}
+
+.valserra .competences-table th {
+  padding: var(--valserra-spacing-sm);
+  text-align: left;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 10px;
+  color: rgba(240, 240, 245, 0.7);
+  letter-spacing: 1px;
+  border-right: var(--valserra-border-width) solid rgba(255, 255, 255, 0.1);
+}
+
+.valserra .competences-table th:last-child {
+  border-right: none;
+}
+
+.valserra .competences-table tbody tr {
+  border-bottom: var(--valserra-border-width) solid rgba(255, 255, 255, 0.1);
+  transition: background 0.2s;
+}
+
+.valserra .competences-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.valserra .competences-table td {
+  padding: var(--valserra-spacing-sm);
+  color: var(--valserra-light);
+}
+
+.valserra .competences-table td.total {
+  font-weight: bold;
+  font-size: 16px;
+  color: var(--valserra-accent);
+  text-align: center;
+}
+
+.valserra .competences-table input[type="number"],
+.valserra .competences-table input[type="checkbox"] {
+  background: var(--valserra-bg-primary);
+  border: var(--valserra-border-width) solid var(--valserra-border);
+  color: var(--valserra-light);
+  padding: var(--valserra-spacing-xs);
+  text-align: center;
+  border-radius: 0;
+}
+
+.valserra .competences-table input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.valserra .competences-table select {
+  background: var(--valserra-bg-primary);
+  border: var(--valserra-border-width) solid var(--valserra-border);
+  color: var(--valserra-light);
+  padding: var(--valserra-spacing-xs);
+  border-radius: 0;
+}
+
+.valserra .competences-table button {
+  padding: var(--valserra-spacing-xs) var(--valserra-spacing-sm);
+  background: transparent;
+  border: var(--valserra-border-width) solid var(--valserra-accent);
+  color: var(--valserra-accent);
+  border-radius: 0;
+  cursor: pointer;
+  transition: var(--valserra-transition);
+}
+
+.valserra .competences-table button:hover {
+  background: var(--valserra-accent);
+  color: var(--valserra-dark);
+}
+
+/* Style pentagon pour les sections de stats */
+.valserra .stat-pentagon {
+  background: var(--valserra-bg-dark);
+  border: var(--valserra-border-width) solid var(--valserra-border);
+  padding: var(--valserra-spacing-lg) var(--valserra-spacing-md);
+  text-align: center;
+  clip-path: polygon(0 0, 100% 0, 100% 75%, 50% 100%, 0 75%);
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.valserra .stat-pentagon label {
+  font-size: 10px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: rgba(240, 240, 245, 0.7);
+  letter-spacing: 1px;
+  margin-bottom: var(--valserra-spacing-sm);
+}
+
+.valserra .stat-pentagon .value {
+  font-size: 28px;
+  font-weight: bold;
+  color: var(--valserra-accent);
+}
+
+/* Responsivité pour caractéristiques */
+@media (max-width: 768px) {
+  .valserra .caracteristiques-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .valserra .caracteristiques-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+@media (min-width: 1025px) {
+  .valserra .caracteristiques-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}

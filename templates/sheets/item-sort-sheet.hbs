@@ -1,0 +1,164 @@
+<form class="{{cssClass}} flexcol" autocomplete="off">
+
+  {{! Header }}
+  <header class="sheet-header">
+    <div class="header-banner">
+      <div class="field-inline" style="flex: 2;">
+        <label>NOM DU SORT</label>
+        <input
+          name="name"
+          type="text"
+          value="{{item.name}}"
+          placeholder="Nom du sort"
+        />
+      </div>
+    </div>
+    <div class="header-main">
+      <img
+        class="profile-img"
+        src="{{item.img}}"
+        data-edit="img"
+        title="{{item.name}}"
+      />
+    </div>
+  </header>
+
+  {{! Sheet Body }}
+  <section class="sheet-body">
+
+    <div class="framed-section">
+
+      <div class="form-group">
+        <label>ESPRIT SOURCE</label>
+        {{#if esprits}}
+          <select name="system.espritSource">
+            <option value="">Aucun esprit</option>
+            {{#each esprits}}
+              <option
+                value="{{this.name}}"
+                {{#if (eq ../system.espritSource this.name)}}selected{{/if}}
+              >
+                {{this.name}}
+                ({{this.system.element}} - Niv. {{this.system.niveau}})
+              </option>
+            {{/each}}
+          </select>
+        {{else}}
+          <input
+            type="text"
+            name="system.espritSource"
+            value="{{system.espritSource}}"
+            placeholder="Nom de l'esprit"
+          />
+        {{/if}}
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>NIVEAU D'ESPRIT REQUIS</label>
+          <input
+            type="number"
+            name="system.niveauEspritRequis"
+            value="{{system.niveauEspritRequis}}"
+            min="1"
+            max="5"
+          />
+        </div>
+
+        <div class="form-group">
+          <label>COÛT EN ÉNERGIE</label>
+          <input
+            type="number"
+            name="system.coutEnergie"
+            value="{{system.coutEnergie}}"
+            min="0"
+          />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>TEMPS D'INCANTATION</label>
+          <input
+            type="text"
+            name="system.tempsDIncantation"
+            value="{{system.tempsDIncantation}}"
+          />
+        </div>
+
+        <div class="form-group">
+          <label>PORTÉE</label>
+          <input type="text" name="system.portee" value="{{system.portee}}" />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>DURÉE</label>
+          <input type="text" name="system.duree" value="{{system.duree}}" />
+        </div>
+
+        <div class="form-group">
+          <label>COMPOSANTES</label>
+          <input
+            type="text"
+            name="system.composantes"
+            value="{{system.composantes}}"
+            placeholder="V, S, M"
+          />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>
+          <input type="checkbox" name="system.evolutif" {{checked
+            system.evolutif
+          }} />
+          SORT ÉVOLUTIF
+        </label>
+        <p class="help-text">Le sort devient plus puissant quand l'esprit monte
+          de niveau</p>
+      </div>
+
+      <div class="form-group editor-content">
+        <label>DESCRIPTION</label>
+        {{editor
+          enrichedDescription
+          target="system.description"
+          button=true
+          owner=owner
+          editable=editable
+        }}
+      </div>
+
+      <div class="form-group">
+        <label>EFFET (MÉCANIQUE)</label>
+        <textarea name="system.effet" rows="4">{{system.effet}}</textarea>
+        <p class="help-text">Dégâts, buffs, conditions, etc.</p>
+      </div>
+
+      {{#if system.evolutif}}
+        <div class="form-group">
+          <label>EFFET AUX NIVEAUX SUPÉRIEURS</label>
+          <textarea
+            name="system.effetNiveauSuperieur"
+            rows="3"
+          >{{system.effetNiveauSuperieur}}</textarea>
+          <p class="help-text">Comment le sort évolue avec les niveaux
+            supérieurs de l'esprit</p>
+        </div>
+      {{/if}}
+
+      {{#if owner}}
+        <div class="form-group">
+          <button type="button" class="use-sort">
+            <i class="fas fa-magic"></i>
+            LANCER LE SORT
+          </button>
+        </div>
+      {{/if}}
+
+    </div>
+
+  </section>
+</form>

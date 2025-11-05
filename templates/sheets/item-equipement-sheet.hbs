@@ -1,0 +1,106 @@
+<form class="{{cssClass}} flexcol" autocomplete="off">
+
+  {{! Header }}
+  <header class="sheet-header">
+    <div class="header-banner">
+      <div class="field-inline" style="flex: 2;">
+        <label>NOM DE L'ÉQUIPEMENT</label>
+        <input
+          name="name"
+          type="text"
+          value="{{item.name}}"
+          placeholder="Nom de l'équipement"
+        />
+      </div>
+    </div>
+    <div class="header-main">
+      <img
+        class="profile-img"
+        src="{{item.img}}"
+        data-edit="img"
+        title="{{item.name}}"
+      />
+    </div>
+  </header>
+
+  {{! Sheet Body }}
+  <section class="sheet-body">
+
+    <div class="framed-section">
+
+      <div class="form-group">
+        <label>TYPE D'ÉQUIPEMENT</label>
+        <select name="system.type">
+          {{#each typesEquipement}}
+            <option
+              value="{{this}}"
+              {{#if (eq ../system.type this)}}selected{{/if}}
+            >{{this}}</option>
+          {{/each}}
+        </select>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>QUANTITÉ</label>
+          <input
+            type="number"
+            name="system.quantite"
+            value="{{system.quantite}}"
+            min="1"
+          />
+        </div>
+
+        <div class="form-group">
+          <label>POIDS (KG)</label>
+          <input
+            type="number"
+            name="system.poids"
+            value="{{system.poids}}"
+            step="0.1"
+            min="0"
+          />
+        </div>
+
+        <div class="form-group">
+          <label>PRIX (PO)</label>
+          <input
+            type="number"
+            name="system.prix"
+            value="{{system.prix}}"
+            min="0"
+          />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>
+          <input type="checkbox" name="system.equipe" {{checked
+            system.equipe
+          }} />
+          ÉQUIPÉ ACTUELLEMENT
+        </label>
+      </div>
+
+      <div class="form-group editor-content">
+        <label>DESCRIPTION</label>
+        {{editor
+          enrichedDescription
+          target="system.description"
+          button=true
+          owner=owner
+          editable=editable
+        }}
+      </div>
+
+      <div class="form-group">
+        <label>PROPRIÉTÉS SPÉCIALES</label>
+        <textarea name="system.proprietes" rows="4">{{system.proprietes}}</textarea>
+        <p class="help-text">Bonus d'attaque, de défense, effets spéciaux,
+          etc.</p>
+      </div>
+
+    </div>
+
+  </section>
+</form>

@@ -1,0 +1,138 @@
+╔═══════════════════════════════════════════════════════════════════╗
+║                    VAL'SERRA - VERSION 1.1.0                      ║
+║              RESTRUCTURATION SORTS & TALENTS + CSS                ║
+╚═══════════════════════════════════════════════════════════════════╝
+
+📋 PRINCIPAUX CHANGEMENTS
+═══════════════════════════
+
+✅ SÉPARATION SORTS / TALENTS
+   
+   Avant : Type "Capacité" unique (confus)
+   
+   Maintenant :
+   • SORTS      → Liés aux ESPRITS (magie spirituelle évolutive)
+   • TALENTS    → Liés aux CLASSES (compétences de classe)
+
+✅ NOUVEAUX ONGLETS SUR LES FICHES
+   
+   Les fiches personnages ont maintenant 6 onglets :
+   1. Stats        - Caractéristiques, compétences, PV
+   2. Esprits      - Liste des esprits liés
+   3. Sorts        - 🆕 Magie des esprits
+   4. Talents      - 🆕 Compétences de classe
+   5. Inventaire   - Équipement
+   6. Biographie   - Histoire
+
+✅ CSS RÉORGANISÉ EN 5 FICHIERS
+   
+   styles/
+   ├── style.css       → Fichier principal (imports)
+   ├── variables.css   → Couleurs, espacements
+   ├── layout.css      → Structure et mise en page
+   ├── components.css  → Boutons, items, formulaires
+   ├── actors.css      → PV, caractéristiques, compétences
+   └── chat.css        → Messages de sorts/talents
+
+═══════════════════════════
+🎯 UTILISATION
+═══════════════════════════
+
+CRÉER UN SORT :
+1. Onglet "Sorts" → Cliquer "Ajouter un Sort"
+2. Remplir :
+   - Nom (ex: "Boule de Feu")
+   - Esprit Source (ex: "Ifrit")
+   - Niveau d'esprit requis (1-5)
+   - Coût en énergie
+   - Temps d'incantation, portée, durée
+   - Cocher "Évolutif" si le sort gagne en puissance
+
+CRÉER UN TALENT :
+1. Onglet "Talents" → Cliquer "Ajouter un Talent"
+2. Remplir :
+   - Nom (ex: "Second Souffle")
+   - Classe Source (ex: "Guerrier")
+   - Type : actif, passif ou réaction
+   - Fréquence : illimité, 1/repos, 1/jour, etc.
+   - Effet mécanique
+
+MODIFIER LES COULEURS :
+→ Éditez styles/variables.css
+→ Changez les valeurs --valserra-primary, etc.
+
+═══════════════════════════
+⚠️ ATTENTION - MIGRATION
+═══════════════════════════
+
+Si vous aviez des "Capacités" (ancien système) :
+→ Elles ne fonctionneront plus
+→ Recréez-les comme SORTS ou TALENTS selon leur nature
+
+Capacité magique = SORT
+Compétence de classe = TALENT
+
+═══════════════════════════
+📚 DOCUMENTATION
+═══════════════════════════
+
+README.md                → Vue d'ensemble complète
+CHANGEMENTS_V1.1.md      → Détails techniques des changements
+GUIDE_DEMARRAGE.md       → Guide pour débuter
+EXEMPLES_MACROS.md       → Macros utiles
+EXTENSION.md             → Guide pour étendre le système
+
+═══════════════════════════
+✨ EXEMPLES
+═══════════════════════════
+
+EXEMPLE DE SORT :
+┌──────────────────────────────────────┐
+│ Boule de Feu                         │
+├──────────────────────────────────────┤
+│ Esprit : Ifrit (Feu)                 │
+│ Niveau requis : 3                    │
+│ Coût : 5 énergie                     │
+│ Incantation : 1 action               │
+│ Portée : 30 mètres                   │
+│ Évolutif : Oui                       │
+│ Effet : 3d6 dégâts de feu            │
+│ Niv. sup. : +1d6 par niveau          │
+└──────────────────────────────────────┘
+
+EXEMPLE DE TALENT :
+┌──────────────────────────────────────┐
+│ Second Souffle                       │
+├──────────────────────────────────────┤
+│ Classe : Guerrier                    │
+│ Niveau requis : 1                    │
+│ Type : Actif                         │
+│ Fréquence : 1/repos court            │
+│ Effet : Action bonus, récupère      │
+│         1d10 + niveau PV             │
+└──────────────────────────────────────┘
+
+═══════════════════════════
+🚀 DÉMARRAGE
+═══════════════════════════
+
+1. Redémarrez Foundry VTT
+2. Ouvrez/créez un monde avec Val'serra
+3. Créez un personnage
+4. Ajoutez des esprits (onglet Esprits)
+5. Créez des sorts liés aux esprits (onglet Sorts)
+6. Créez des talents de classe (onglet Talents)
+7. Lancez vos sorts et utilisez vos talents !
+
+═══════════════════════════
+❓ QUESTIONS ?
+═══════════════════════════
+
+Consultez la documentation dans :
+→ README.md
+→ CHANGEMENTS_V1.1.md
+
+Bon jeu dans l'univers de Val'serra ! 🎲✨
+
+Version 1.1.0 - 4 novembre 2025
+

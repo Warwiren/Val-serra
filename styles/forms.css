@@ -1,0 +1,92 @@
+/**
+ * Styles pour les formulaires et inputs - Meilleure lisibilité
+ */
+
+/* Inputs de base */
+.valserra input[type="text"],
+.valserra input[type="number"],
+.valserra textarea {
+  background: var(--valserra-bg-dark);
+  border: var(--valserra-border-width) solid var(--valserra-border);
+  color: var(--valserra-light);
+  padding: var(--valserra-spacing-sm);
+  border-radius: 0;
+  font-family: inherit;
+  transition: var(--valserra-transition);
+}
+
+.valserra input[type="text"]:focus,
+.valserra input[type="number"]:focus,
+.valserra textarea:focus {
+  outline: none;
+  border-color: var(--valserra-accent);
+  box-shadow: var(--valserra-shadow-glow);
+}
+
+/* Select avec meilleur contraste */
+.valserra select {
+  background: #e8e8f0;
+  /* Fond clair pour contraste */
+  border: var(--valserra-border-width-thick) solid var(--valserra-accent);
+  color: #1a1a1a;
+  /* Texte foncé */
+  padding: var(--valserra-spacing-sm);
+  border-radius: 0;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  transition: var(--valserra-transition);
+}
+
+.valserra select:hover {
+  background: #ffffff;
+  border-color: var(--valserra-hover);
+  box-shadow: 0 0 8px rgba(107, 127, 215, 0.4);
+}
+
+.valserra select:focus {
+  outline: none;
+  background: #ffffff;
+  border-color: var(--valserra-accent);
+  box-shadow: var(--valserra-shadow-glow);
+}
+
+/* Options des select - Contraste élevé */
+.valserra select option {
+  background: #ffffff;
+  color: #1a1a1a;
+  padding: var(--valserra-spacing-sm);
+  font-weight: 500;
+}
+
+.valserra select option:hover,
+.valserra select option:checked {
+  background: var(--valserra-accent);
+  color: #ffffff;
+}
+
+/* Select dans les tables de compétences */
+.valserra .competences-table select {
+  width: 100%;
+  min-width: 140px;
+}
+
+/* Select dans le header */
+.valserra .sheet-header select {
+  background: rgba(232, 232, 240, 0.95);
+  color: #1a1a1a;
+}
+
+/* Checkbox avec meilleur style */
+.valserra input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: var(--valserra-accent);
+}
+
+.valserra input[type="checkbox"]:focus {
+  outline: 2px solid var(--valserra-accent);
+  outline-offset: 2px;
+}

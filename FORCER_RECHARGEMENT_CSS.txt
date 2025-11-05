@@ -1,0 +1,151 @@
+╔════════════════════════════════════════════════════════════════════╗
+║                                                                    ║
+║         ⚠️ FORCER LE RECHARGEMENT DU CSS ⚠️                      ║
+║                                                                    ║
+╚════════════════════════════════════════════════════════════════════╝
+
+
+🔴 PROBLÈME : LE CSS EST EN CACHE
+════════════════════════════════════════════════════════════════════
+
+Foundry garde le CSS en cache, donc vos modifications ne sont pas
+visibles même après redémarrage !
+
+
+✅ SOLUTION : 3 MÉTHODES AU CHOIX
+════════════════════════════════════════════════════════════════════
+
+
+MÉTHODE 1 : CTRL+F5 (LA PLUS SIMPLE)
+──────────────────────────────────────────────────────────────────
+
+1. Dans Foundry, avec une fiche ouverte
+2. Appuyez sur CTRL + F5 (ou CTRL + Shift + R)
+   └─> Cela force le rechargement du CSS
+3. La fiche se recharge avec les nouvelles marges !
+
+
+MÉTHODE 2 : VIDER LE CACHE FOUNDRY
+──────────────────────────────────────────────────────────────────
+
+1. Fermez toutes les fiches
+2. Dans Foundry : Appuyez sur F12 (Console développeur)
+3. Clic DROIT sur le bouton Actualiser (à côté de la barre d'URL)
+4. Choisissez "Vider le cache et actualiser"
+5. Rouvrez une fiche
+
+
+MÉTHODE 3 : SUPPRIMER LE CACHE MANUELLEMENT
+──────────────────────────────────────────────────────────────────
+
+1. Fermez Foundry COMPLÈTEMENT
+2. Allez dans le dossier de Foundry
+3. Supprimez le dossier "Cache" s'il existe
+4. Relancez Foundry
+
+
+🎯 NOUVELLES MARGES APPLIQUÉES (v1.1.3)
+════════════════════════════════════════════════════════════════════
+
+Tout a été réduit à 4px (au lieu de 8px) :
+
+• Padding du body : 8px → 4px
+• Padding des sections : 8px → 4px
+• Marge entre sections : 8px → 4px
+• Gap caractéristiques : 8px → 4px
+• Padding caractéristiques : 8px → 4px
+• Marge tables : 8px → 4px
+
+
+AVANT (8px partout) :
+┌─────────────────────────────────┐
+│ ████ 8px ████                   │
+│ ┌─ CARACTÉRISTIQUES ─┐          │
+│ │ ████ 8px ████       │          │
+│ │ [FOR][DEX][CON]...  │          │
+│ └─────────────────────┘          │
+│ ████ 8px ████                   │
+└─────────────────────────────────┘
+
+APRÈS (4px partout) :
+┌─────────────────────────────────┐
+│ ██ 4px ██                       │
+│ ┌─ CARACTÉRISTIQUES ─┐          │
+│ │ ██ 4px ██           │          │
+│ │ [FOR][DEX][CON]...  │          │
+│ └─────────────────────┘          │
+│ ██ 4px ██                       │
+└─────────────────────────────────┘
+
+ENCORE PLUS COMPACT ! 🎯
+
+
+FICHIERS MODIFIÉS (v1.1.3)
+════════════════════════════════════════════════════════════════════
+
+✓ styles/layout.css
+  • .sheet-body padding : sm(8px) → xs(4px)
+  • .framed-section padding : sm(8px) → xs(4px)
+  • .framed-section margin : sm(8px) → xs(4px)
+
+✓ styles/actors.css
+  • .caracteristiques-grid gap : sm(8px) → xs(4px)
+  • .caracteristiques-grid margin-top : sm(8px) → xs(4px)
+  • .caracteristique padding : sm(8px) → xs(4px)
+  • .competences-table margin-top : sm(8px) → xs(4px)
+
+✓ system.json
+  • Version : 1.1.3
+
+
+POUR VOIR LES CHANGEMENTS
+════════════════════════════════════════════════════════════════════
+
+⚠️ IMPORTANT : VIDER LE CACHE CSS ⚠️
+
+Option A (rapide) :
+1. Ouvrir une fiche dans Foundry
+2. Appuyer sur CTRL + F5
+3. Les marges sont réduites ! ✨
+
+Option B (complète) :
+1. Fermer Foundry COMPLÈTEMENT
+2. Relancer Foundry
+3. F12 → Console → Clic droit sur Actualiser
+4. "Vider le cache et actualiser"
+5. Ouvrir une fiche
+
+
+SI CTRL+F5 NE MARCHE PAS
+════════════════════════════════════════════════════════════════════
+
+Essayez dans cet ordre :
+
+1. CTRL + SHIFT + R
+2. F12 → Onglet "Application" → Storage → "Clear site data"
+3. Redémarrer Foundry complètement
+4. En dernier recours : Réinstaller le système (supprimer et remettre)
+
+
+VARIABLES D'ESPACEMENT (référence)
+════════════════════════════════════════════════════════════════════
+
+--valserra-spacing-xs: 4px   ← MAINTENANT UTILISÉ !
+--valserra-spacing-sm: 8px   ← Avant
+--valserra-spacing-md: 12px
+--valserra-spacing-lg: 16px
+--valserra-spacing-xl: 24px
+
+
+═══════════════════════════════════════════════════════════════════
+
+         ✨ MARGES ULTRA-COMPACTES - 4px PARTOUT ! ✨
+
+              Faites CTRL+F5 pour voir le résultat !
+
+═══════════════════════════════════════════════════════════════════
+
+
+Version 1.1.3 - 4 novembre 2025
+Marges minimales pour onglet Stats
+

@@ -1,0 +1,105 @@
+╔════════════════════════════════════════════════════════════════════╗
+║                                                                    ║
+║           ✅ CORRECTION DU POSITIONNEMENT DES FICHES ✅           ║
+║                                                                    ║
+╚════════════════════════════════════════════════════════════════════╝
+
+
+🔧 PROBLÈME IDENTIFIÉ ET RÉSOLU
+════════════════════════════════════════════════════════════════════
+
+PROBLÈME :
+Les fiches s'ouvraient "bloquées" sur le côté droit de l'écran
+au lieu de s'ouvrir centrées comme avant.
+
+CAUSE :
+J'avais ajouté du code pour "forcer" le centrage, mais ce code
+entrait en conflit avec le comportement par défaut de Foundry.
+
+SOLUTION :
+✅ Suppression des méthodes _render() ajoutées
+✅ Retour au comportement par défaut de Foundry
+✅ Foundry centre automatiquement les fiches !
+
+
+CODE SUPPRIMÉ
+════════════════════════════════════════════════════════════════════
+
+❌ Code problématique RETIRÉ de actor-sheet.js :
+```javascript
+async _render(force, options) {
+  await super._render(force, options);
+  if (!this._hasBeenRendered) {
+    // ... code de centrage forcé
+  }
+}
+```
+
+❌ Code problématique RETIRÉ de item-sheet.js :
+```javascript
+async _render(force, options) {
+  await super._render(force, options);
+  if (!this._hasBeenRendered) {
+    // ... code de centrage forcé
+  }
+}
+```
+
+✅ Foundry gère maintenant le positionnement naturellement !
+
+
+FICHIERS MODIFIÉS
+════════════════════════════════════════════════════════════════════
+
+✓ module/sheets/actor-sheet.js  → Méthode _render() supprimée
+✓ module/sheets/item-sheet.js   → Méthode _render() supprimée
+
+
+POUR APPLIQUER LA CORRECTION
+════════════════════════════════════════════════════════════════════
+
+1. REDÉMARREZ FOUNDRY VTT
+   └─> Fermez COMPLÈTEMENT
+   └─> Relancez l'application
+
+2. OUVREZ UN PERSONNAGE
+   └─> Double-clic sur l'acteur
+
+3. RÉSULTAT ATTENDU
+   └─> La fiche s'ouvre AU CENTRE de l'écran
+   └─> Comme une fenêtre flottante normale
+   └─> Déplaçable et redimensionnable
+
+
+✅ VÉRIFICATIONS À FAIRE
+════════════════════════════════════════════════════════════════════
+
+Après redémarrage :
+□ La fiche s'ouvre au CENTRE (pas bloquée à droite)
+□ La fiche est MOBILE (vous pouvez la déplacer)
+□ La fiche est REDIMENSIONNABLE (glissez les bords)
+□ Aucune erreur dans la console (F12)
+□ Comportement normal comme avant
+
+
+AUTRES CORRECTIFS MAINTENUS
+════════════════════════════════════════════════════════════════════
+
+✅ Select lisibles (fond blanc + texte noir)
+✅ Fiche large (850px)
+✅ Marges optimisées
+✅ Espaces dans onglet STATS corrigés
+✅ Design gothique étoilé
+
+
+═══════════════════════════════════════════════════════════════════
+
+              ✨ CORRECTION APPLIQUÉE ! ✨
+
+        Redémarrez Foundry et tout fonctionnera !
+
+═══════════════════════════════════════════════════════════════════
+
+
+Version 1.1.2 - 4 novembre 2025
+

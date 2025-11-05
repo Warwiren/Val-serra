@@ -1,0 +1,315 @@
+/**
+ * Styles pour l'en-tête de fiche - Style Gothique
+ */
+
+/* Section principale du header */
+.valserra .sheet-header .header-main {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: var(--valserra-spacing-xl);
+  padding: var(--valserra-spacing-xl);
+  align-items: center;
+  justify-content: center;
+  background: var(--valserra-bg-secondary);
+  border-bottom: var(--valserra-border-width) solid var(--valserra-border);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Image de profil */
+.valserra .sheet-header .profile-section {
+  flex: 0 0 auto;
+}
+
+.valserra .sheet-header .profile-img {
+  width: 120px;
+  height: 120px;
+  border: var(--valserra-border-width-thick) solid var(--valserra-border);
+  object-fit: cover;
+  object-position: top center;
+  cursor: pointer;
+  transition: var(--valserra-transition);
+  filter: grayscale(20%);
+}
+
+.valserra .sheet-header .profile-section.center {
+  justify-self: center;
+}
+
+.valserra .sheet-header .profile-img.large {
+  width: 180px;
+  height: 200px;
+}
+
+.valserra .sheet-header .profile-img:hover {
+  filter: grayscale(0%);
+  box-shadow: var(--valserra-shadow-glow);
+}
+
+/* PV Central - Style pentagon */
+.valserra .resources-left,
+.valserra .resources-right {
+  display: flex;
+  flex-direction: column;
+  gap: var(--valserra-spacing-md);
+}
+
+.valserra .pv-display {
+  background: var(--valserra-bg-dark);
+  border: var(--valserra-border-width-thick) solid var(--valserra-danger);
+  padding: var(--valserra-spacing-xl) var(--valserra-spacing-lg);
+  text-align: center;
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%);
+  min-width: 180px;
+  box-shadow: 0 0 15px rgba(215, 74, 74, 0.3);
+}
+
+.valserra .pv-display > label {
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: rgba(240, 240, 245, 0.7);
+  letter-spacing: 2px;
+  margin-bottom: var(--valserra-spacing-sm);
+  display: block;
+}
+
+.valserra .pv-values {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--valserra-spacing-sm);
+  margin: var(--valserra-spacing-md) 0;
+}
+
+.valserra .pv-values input {
+  background: transparent;
+  border: none;
+  border-bottom: var(--valserra-border-width) solid var(--valserra-border);
+  color: var(--valserra-danger);
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  width: 70px;
+  padding: 0;
+}
+
+.valserra .pv-values .separator {
+  font-size: 28px;
+  color: rgba(240, 240, 245, 0.5);
+}
+
+.valserra .pv-temp-field {
+  margin-top: var(--valserra-spacing-md);
+}
+
+.valserra .pv-temp-field label {
+  font-size: 9px;
+  text-transform: uppercase;
+  color: rgba(240, 240, 245, 0.5);
+  letter-spacing: 1px;
+  display: block;
+  margin-bottom: var(--valserra-spacing-xs);
+}
+
+.valserra .pv-temp-field input {
+  width: 60px;
+  background: var(--valserra-bg-primary);
+  border: var(--valserra-border-width) solid rgba(255, 255, 255, 0.3);
+  color: var(--valserra-light);
+  text-align: center;
+  padding: var(--valserra-spacing-xs);
+  font-size: 14px;
+}
+
+/* Mana temp */
+.valserra .mana-temp-field {
+  margin-top: var(--valserra-spacing-sm);
+}
+
+.valserra .mana-temp-field label {
+  font-size: 9px;
+  text-transform: uppercase;
+  color: rgba(240, 240, 245, 0.5);
+  letter-spacing: 1px;
+  display: block;
+  margin-bottom: var(--valserra-spacing-xs);
+}
+
+.valserra .mana-temp-field input {
+  width: 60px;
+  background: var(--valserra-bg-primary);
+  border: var(--valserra-border-width) solid rgba(255, 255, 255, 0.3);
+  color: var(--valserra-light);
+  text-align: center;
+  padding: var(--valserra-spacing-xs);
+  font-size: 14px;
+}
+
+/* Mana display - similar to PV */
+.valserra .mana-display {
+  background: var(--valserra-bg-dark);
+  border: var(--valserra-border-width-thick) solid var(--valserra-accent);
+  padding: var(--valserra-spacing-lg) var(--valserra-spacing-md);
+  text-align: center;
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%);
+  min-width: 160px;
+  box-shadow: 0 0 15px rgba(83, 149, 201, 0.3);
+  margin-top: var(--valserra-spacing-md);
+}
+
+.valserra .mana-display > label {
+  font-size: 11px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: rgba(240, 240, 245, 0.7);
+  letter-spacing: 2px;
+  margin-bottom: var(--valserra-spacing-xs);
+  display: block;
+}
+
+.valserra .mana-values {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--valserra-spacing-sm);
+}
+
+.valserra .mana-values input {
+  background: transparent;
+  border: none;
+  border-bottom: var(--valserra-border-width) solid var(--valserra-border);
+  color: var(--valserra-accent);
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  width: 60px;
+  padding: 0;
+}
+
+/* Martial display */
+.valserra .martial-display {
+  background: var(--valserra-bg-dark);
+  border: var(--valserra-border-width-thick) solid var(--valserra-success);
+  padding: var(--valserra-spacing-lg) var(--valserra-spacing-md);
+  text-align: center;
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%);
+  min-width: 160px;
+  box-shadow: 0 0 15px rgba(74, 157, 111, 0.3);
+  margin-top: var(--valserra-spacing-md);
+}
+
+.valserra .martial-display > label {
+  font-size: 11px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: rgba(240, 240, 245, 0.7);
+  letter-spacing: 2px;
+  margin-bottom: var(--valserra-spacing-xs);
+  display: block;
+}
+
+.valserra .martial-values {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--valserra-spacing-sm);
+}
+
+.valserra .martial-values input {
+  background: transparent;
+  border: none;
+  border-bottom: var(--valserra-border-width) solid var(--valserra-border);
+  color: var(--valserra-success);
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  width: 60px;
+  padding: 0;
+}
+
+/* Armure (CA) */
+.valserra .armure-display {
+  background: var(--valserra-bg-dark);
+  border: var(--valserra-border-width-thick) solid rgba(255, 255, 255, 0.6);
+  padding: var(--valserra-spacing-lg) var(--valserra-spacing-md);
+  text-align: center;
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%);
+  min-width: 140px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+  margin-top: var(--valserra-spacing-md);
+}
+
+.valserra .armure-display > label {
+  font-size: 11px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: rgba(240, 240, 245, 0.7);
+  letter-spacing: 2px;
+  margin-bottom: var(--valserra-spacing-xs);
+  display: block;
+}
+
+.valserra .armure-display .armure {
+  background: transparent;
+  border: none;
+  border-bottom: var(--valserra-border-width) solid var(--valserra-border);
+  color: rgba(240, 240, 245, 0.9);
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  width: 60px;
+  padding: 0;
+}
+
+/* Champs inline dans la bannière */
+.valserra .header-banner .field-inline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.valserra .header-banner .field-inline label {
+  font-size: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: var(--valserra-spacing-xs);
+  color: rgba(240, 240, 245, 0.7);
+}
+
+.valserra .header-banner .field-inline input {
+  background: transparent;
+  border: none;
+  border-bottom: var(--valserra-border-width) solid var(--valserra-border);
+  color: var(--valserra-light);
+  padding: var(--valserra-spacing-xs);
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  width: 100%;
+}
+
+.valserra .header-banner .field-inline input::placeholder {
+  color: rgba(240, 240, 245, 0.4);
+}
+
+/* Header pour items (fiches d'esprits, sorts, talents, équipement) */
+.valserra.sheet.item .sheet-header {
+  background: var(--valserra-bg-dark);
+  border-bottom: var(--valserra-border-width) solid var(--valserra-border);
+}
+
+.valserra.sheet.item .header-main {
+  padding: var(--valserra-spacing-lg);
+  display: flex;
+  justify-content: center;
+}
+
+.valserra.sheet.item .header-main .profile-img {
+  width: 100px;
+  height: 100px;
+}

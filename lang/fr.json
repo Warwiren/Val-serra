@@ -1,0 +1,107 @@
+{
+  "VALSERRA": {
+    "ActorSheet": {
+      "Tabs": {
+        "Stats": "Statistiques",
+        "Esprits": "Esprits",
+        "Sorts": "Sorts",
+        "Talents": "Talents",
+        "Inventaire": "Inventaire",
+        "Biographie": "Biographie"
+      },
+      "Stats": {
+        "Niveau": "Niveau",
+        "Experience": "Expérience",
+        "Race": "Race",
+        "Classe": "Classe",
+        "Alignement": "Alignement",
+        "PV": "Points de Vie",
+        "PVMax": "PV Max",
+        "PVTemp": "PV Temp",
+        "Role": "Rôle",
+        "Attitude": "Attitude",
+        "Type": "Type",
+        "Famille": "Famille",
+        "DangerLevel": "Niveau de Danger"
+      },
+      "Caracteristiques": {
+        "Title": "Caractéristiques",
+        "Force": "Force",
+        "Dexterite": "Dextérité",
+        "Constitution": "Constitution",
+        "Intelligence": "Intelligence",
+        "Volonte": "Volonté",
+        "Charisme": "Charisme",
+        "Value": "Valeur",
+        "Mod": "Mod"
+      },
+      "Competences": {
+        "Title": "Compétences",
+        "Intimidation": "Intimidation",
+        "Acrobatie": "Acrobatie",
+        "Volonte": "Volonté",
+        "Nature": "Nature",
+        "Diplomatie": "Diplomatie",
+        "Discretion": "Discrétion",
+        "Arcane": "Arcane",
+        "Medecine": "Médecine",
+        "Performance": "Performance",
+        "Histoire": "Histoire",
+        "Survie": "Survie",
+        "Perception": "Perception",
+        "Intuition": "Intuition",
+        "Rang": {
+          "non-entrainé": "Non-entraîné",
+          "novice": "Novice",
+          "intermédiaire": "Intermédiaire",
+          "expert": "Expert",
+          "maitre": "Maître"
+        }
+      },
+      "Esprits": {
+        "Title": "Esprits Liés",
+        "Add": "Ajouter un Esprit",
+        "Element": "Élément",
+        "Niveau": "Niveau",
+        "NiveauMax": "Niveau Max",
+        "Pacte": "Type de Pacte"
+      },
+      "Sorts": {
+        "Title": "Sorts",
+        "Add": "Ajouter un Sort",
+        "Source": "Esprit Source",
+        "Cout": "Coût en Énergie",
+        "Incantation": "Temps d'Incantation",
+        "Portee": "Portée",
+        "Duree": "Durée",
+        "Composantes": "Composantes",
+        "Evolutif": "Sort Évolutif",
+        "EffetSuperieur": "Effet aux niveaux supérieurs"
+      },
+      "Talents": {
+        "Title": "Talents de Classe",
+        "Add": "Ajouter un Talent",
+        "Classe": "Classe",
+        "Frequence": "Fréquence",
+        "Prerequis": "Prérequis",
+        "Type": {
+          "actif": "Actif",
+          "passif": "Passif",
+          "reaction": "Réaction"
+        }
+      },
+      "Inventaire": {
+        "Title": "Inventaire",
+        "Add": "Ajouter un Équipement",
+        "Quantite": "Qté",
+        "Poids": "Poids",
+        "Prix": "Prix",
+        "Equipe": "Équipé"
+      }
+    },
+    "ItemSheet": {
+      "Description": "Description",
+      "Details": "Détails"
+    }
+  }
+}

@@ -1,0 +1,48 @@
+# Foundry VTT - Fichiers système Val'serra
+
+# Fichiers de développement
+*.log
+*.map
+node_modules/
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Fichiers de build (si vous utilisez un bundler)
+dist/
+build/
+
+# Fichiers OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Fichiers temporaires
+*.tmp
+*.temp
+*.bak
+*.backup
+
+# Dossiers de compendiums (peuvent être volumineux)
+# Décommentez si vous ne voulez pas les versionner
+# packs/**/*.db
+# packs/**/*.log
+# packs/**/*.ldb
+
+# Fichiers de test
+test/
+*.test.js
+*.spec.js
+
+# Documentation générée automatiquement
+docs/api/
+
+# Environnement de développement
+.env
+.env.local
+
+# Cache
+.cache/
+

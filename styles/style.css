@@ -1,0 +1,25 @@
+/**
+ * Styles pour le système Val'serra
+ * Version Foundry VTT V13
+ * Thème : Nuit Étoilée Gothique
+ * 
+ * Architecture CSS modulaire :
+ * - variables.css  : Variables CSS et tokens de design (thème sombre)
+ * - starfield.css  : Effet de champ d'étoiles
+ * - layout.css     : Structure générale et mise en page gothique
+ * - components.css : Composants réutilisables
+ * - actors.css     : Styles spécifiques aux acteurs
+ * - chat.css       : Messages de chat
+ * 
+ * Ce fichier principal ne contient que les imports.
+ * Pour modifier les styles, éditez les fichiers correspondants dans le dossier styles/.
+ */
+
+@import url("variables.css");
+@import url("starfield.css");
+@import url("layout.css");
+@import url("header.css");
+@import url("forms.css");
+@import url("components.css");
+@import url("actors.css");
+@import url("chat.css");

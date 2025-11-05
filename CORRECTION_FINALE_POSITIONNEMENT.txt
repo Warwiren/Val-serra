@@ -1,0 +1,136 @@
+╔════════════════════════════════════════════════════════════════════╗
+║                                                                    ║
+║         ✅ CORRECTION FINALE DU POSITIONNEMENT ✅                 ║
+║                                                                    ║
+╚════════════════════════════════════════════════════════════════════╝
+
+
+🐛 PROBLÈME IDENTIFIÉ
+════════════════════════════════════════════════════════════════════
+
+Les fiches étaient "BLOQUÉES" sur le côté droit :
+• Impossibles à déplacer
+• Impossibles à superposer
+• Ancrées au bord de l'écran
+• Ne se comportaient plus comme des fenêtres normales
+
+
+🔍 CAUSE TROUVÉE
+════════════════════════════════════════════════════════════════════
+
+Le CSS modifiait directement .valserra.sheet avec :
+• position: relative
+• overflow: hidden
+• ::before et ::after pour les étoiles
+
+Cela INTERFÉRAIT avec le système de fenêtres de Foundry !
+
+
+✅ SOLUTION APPLIQUÉE
+════════════════════════════════════════════════════════════════════
+
+CHANGEMENT 1 : Starfield (étoiles)
+──────────────────────────────────────────────────────────────────
+
+Avant (problématique) :
+```css
+.valserra.sheet::before {
+  /* Étoiles directement sur .sheet */
+}
+```
+
+Après (corrigé) :
+```css
+.valserra.sheet .window-content::before {
+  /* Étoiles sur window-content uniquement */
+}
+```
+
+CHANGEMENT 2 : Layout
+──────────────────────────────────────────────────────────────────
+
+Avant (problématique) :
+```css
+.valserra.sheet {
+  position: relative;
+  overflow: hidden;
+}
+```
+
+Après (corrigé) :
+```css
+.valserra.sheet .window-content {
+  background: var(--valserra-bg-primary);
+  position: relative;
+  overflow-y: auto;
+}
+```
+
+
+POURQUOI ÇA MARCHE MAINTENANT ?
+════════════════════════════════════════════════════════════════════
+
+✓ Foundry gère .valserra.sheet comme une FENÊTRE
+✓ On ne modifie QUE .window-content (le contenu)
+✓ Foundry peut déplacer/redimensionner la fenêtre librement
+✓ Les étoiles restent visibles (sur window-content)
+✓ Pas d'interférence avec le système de Foundry
+
+
+FICHIERS MODIFIÉS
+════════════════════════════════════════════════════════════════════
+
+✓ styles/layout.css     → Ciblage .window-content uniquement
+✓ styles/starfield.css  → Étoiles sur .window-content::before/after
+
+
+POUR APPLIQUER
+════════════════════════════════════════════════════════════════════
+
+1. REDÉMARREZ FOUNDRY VTT
+   └─> Fermez COMPLÈTEMENT
+   └─> Relancez
+
+2. OUVREZ UN PERSONNAGE
+   └─> Double-clic sur l'acteur
+
+3. RÉSULTAT ATTENDU
+   └─> Fiche s'ouvre AU CENTRE
+   └─> Vous pouvez la DÉPLACER
+   └─> Vous pouvez la REDIMENSIONNER
+   └─> Plusieurs fiches peuvent se SUPERPOSER
+
+
+✅ VÉRIFICATIONS À FAIRE
+════════════════════════════════════════════════════════════════════
+
+□ Fiche s'ouvre au CENTRE de l'écran
+□ Fiche a une barre de titre (titre + boutons)
+□ Vous pouvez CLIQUER-GLISSER la barre de titre pour déplacer
+□ Vous pouvez GLISSER les bords pour redimensionner
+□ Ouvrir plusieurs fiches : elles se superposent normalement
+□ Les étoiles sont toujours visibles dans le fond
+□ Le design gothique est intact
+
+
+BONUS : AUTRES CORRECTIFS MAINTENUS
+════════════════════════════════════════════════════════════════════
+
+✅ Select lisibles (fond blanc, texte noir)
+✅ Fiche large (850px)
+✅ Marges optimisées
+✅ Espaces onglet STATS corrigés
+
+
+═══════════════════════════════════════════════════════════════════
+
+         ✨ CORRECTION APPLIQUÉE - TOUT DEVRAIT MARCHER ! ✨
+
+           Redémarrez Foundry et les fiches seront
+               mobiles et centrées comme avant !
+
+═══════════════════════════════════════════════════════════════════
+
+
+Version 1.1.2 - 4 novembre 2025
+

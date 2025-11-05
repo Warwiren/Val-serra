@@ -1,0 +1,53 @@
+/**
+ * Variables CSS pour le système Val'serra
+ * Thème : Nuit Étoilée Gothique
+ */
+
+:root {
+  /* Couleurs principales - Thème sombre étoilé */
+  --valserra-primary: #1a1d3a;
+  --valserra-secondary: #2a2d4a;
+  --valserra-accent: #6b7fd7;
+  --valserra-success: #4a9d6f;
+  --valserra-danger: #d74a4a;
+  --valserra-light: #f0f0f5;
+  --valserra-dark: #0a0a15;
+  --valserra-border: #ffffff;
+  --valserra-hover: #8b9fd7;
+
+  /* Couleurs spécifiques au thème étoilé */
+  --valserra-bg-primary: #1a1d3a;
+  --valserra-bg-secondary: #252849;
+  --valserra-bg-dark: #12152a;
+  --valserra-star-color: rgba(255, 255, 255, 0.8);
+  --valserra-glow: rgba(107, 127, 215, 0.4);
+
+  /* Couleurs fonctionnelles */
+  --valserra-pv-bg: linear-gradient(135deg, #d74a4a 0%, #a03838 100%);
+  --valserra-energie-bg: linear-gradient(135deg, #4a7fd7 0%, #3860a0 100%);
+  --valserra-header-bg: linear-gradient(135deg, #2a2d4a 0%, #1a1d3a 100%);
+
+  /* Espacements */
+  --valserra-spacing-xs: 4px;
+  --valserra-spacing-sm: 8px;
+  --valserra-spacing-md: 12px;
+  --valserra-spacing-lg: 16px;
+  --valserra-spacing-xl: 24px;
+
+  /* Bordures */
+  --valserra-border-width: 1px;
+  --valserra-border-width-thick: 2px;
+  --valserra-radius-sm: 2px;
+  --valserra-radius-md: 4px;
+  --valserra-radius-lg: 6px;
+
+  /* Ombres */
+  --valserra-shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+  --valserra-shadow-md: 0 4px 8px rgba(0, 0, 0, 0.4);
+  --valserra-shadow-lg: 0 6px 16px rgba(0, 0, 0, 0.5);
+  --valserra-shadow-glow: 0 0 10px var(--valserra-glow);
+
+  /* Transitions */
+  --valserra-transition: all 0.2s ease;
+  --valserra-transition-slow: all 0.3s ease;
+}

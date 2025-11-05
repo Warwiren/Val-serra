@@ -1,0 +1,49 @@
+═══════════════════════════════════════════════════════════════════
+              VAL'SERRA v1.1.2 - VERSION FINALE
+═══════════════════════════════════════════════════════════════════
+
+✅ TOUS LES PROBLÈMES CORRIGÉS
+
+
+🔧 CORRECTIFS v1.1.2 (DERNIERS)
+───────────────────────────────────────────────────────────────────
+
+✅ Fiches s'ouvrent AU CENTRE de l'écran
+   (Plus à gauche du menu latéral)
+
+✅ Onglet STATISTIQUES sans espaces vides
+   (Bien ajusté comme les autres onglets)
+
+
+🔧 CORRECTIFS v1.1.1
+───────────────────────────────────────────────────────────────────
+
+✅ Select/dropdowns lisibles (fond blanc + texte noir)
+✅ Fiche plus large (850px)
+✅ Marges réduites
+
+
+🔧 CORRECTIFS v1.1.0
+───────────────────────────────────────────────────────────────────
+
+✅ Design gothique étoilé
+✅ Séparation SORTS (esprits) / TALENTS (classes)
+✅ Labels directs (plus de clés de localisation)
+✅ CSS modulaire (8 fichiers)
+
+
+═══════════════════════════════════════════════════════════════════
+                🚀 REDÉMARREZ FOUNDRY ET JOUEZ ! 🚀
+═══════════════════════════════════════════════════════════════════
+
+1. Fermez Foundry COMPLÈTEMENT
+2. Relancez Foundry
+3. Ouvrez un personnage → CENTRÉ ! ✨
+4. Testez l'onglet STATS → Parfait ! ✓
+
+
+═══════════════════════════════════════════════════════════════════
+                     Version 1.1.2 - FINALE
+                    4 novembre 2025 - Warwiren
+═══════════════════════════════════════════════════════════════════
+

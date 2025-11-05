@@ -19,7 +19,7 @@ export class GrimoireActorSheet extends foundry.appv1.sheets.ActorSheet {
       dexterite: 0,
       constitution: 0,
       intelligence: 0,
-      sagesse: 0,
+      volonte: 0,
       charisme: 0
     };
     context.competences = system.competences || {

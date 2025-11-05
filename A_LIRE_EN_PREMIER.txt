@@ -1,0 +1,273 @@
+╔════════════════════════════════════════════════════════════════════╗
+║                                                                    ║
+║        ✨ SYSTÈME VAL'SERRA - VERSION 1.1.0 ✨                    ║
+║                                                                    ║
+║            🌌 DESIGN GOTHIQUE ÉTOILÉ 🌌                           ║
+║                                                                    ║
+╚════════════════════════════════════════════════════════════════════╝
+
+
+╔════════════════════════════════════════════════════════════════════╗
+║                    ✅ TOUT EST TERMINÉ !                          ║
+╚════════════════════════════════════════════════════════════════════╝
+
+Votre système est prêt avec :
+  ✨ Design gothique sombre avec étoiles scintillantes
+  🔧 Séparation claire SORTS (esprits) / TALENTS (classes)
+  🎨 CSS modulaire en 7 fichiers
+  ✅ Problème de localisation RÉSOLU
+
+
+╔════════════════════════════════════════════════════════════════════╗
+║           🎨 LE NOUVEAU DESIGN - THÈME ÉTOILÉ                     ║
+╚════════════════════════════════════════════════════════════════════╝
+
+🌌 FOND ÉTOILÉ
+   • Bleu-violet foncé mystique (#1a1d3a)
+   • Étoiles blanches scintillantes
+   • Animation subtile de scintillement
+
+⚪ BORDURES BLANCHES
+   • Contraste élevé sur fond sombre
+   • Coins ornementaux gothiques
+   • Style net et professionnel
+
+🔷 FORMES SPÉCIALES
+   • PV en pentagone pointant vers le bas
+   • Bannière avec pointe sur la droite
+   • Sections encadrées avec ornements
+
+✨ EFFETS LUMINEUX
+   • Glow bleu au hover
+   • Ombres profondes
+   • Transitions fluides
+
+
+╔════════════════════════════════════════════════════════════════════╗
+║              🔧 DIFFÉRENCE SORTS vs TALENTS                       ║
+╚════════════════════════════════════════════════════════════════════╝
+
+ESPRITS → SORTS
+├─ Ifrit (Feu)          → Boule de Feu, Lance-flammes
+├─ Ondine (Eau)         → Vague Glacée, Brouillard
+├─ Sylphe (Air)         → Souffle du Vent
+├─ Gaïa (Terre)         → Mur de Pierre
+├─ Lumina (Lumière)     → Rayon Sacré
+├─ Umbra (Ténèbres)     → Ombre Mortelle
+├─ Verdania (Nature)    → Lianes Entravantes
+└─ Arcanus (Arcane)     → Missile Magique
+
+Les SORTS sont ÉVOLUTIFS (niveau 1→5 de l'esprit)
+
+CLASSES → TALENTS
+├─ Guerrier    → Second Souffle, Riposte, Frappes Multiples
+├─ Mage        → Récupération Arcanique, Magie de Combat
+├─ Rôdeur      → Pistage Expert, Embuscade, Tir Précis
+├─ Prêtre      → Canalisation Divine, Aura de Protection
+└─ Roublard    → Attaque Sournoise, Esquive Totale
+
+Les TALENTS ont une FRÉQUENCE d'utilisation
+
+
+╔════════════════════════════════════════════════════════════════════╗
+║                  🚀 DÉMARRAGE RAPIDE                              ║
+╚════════════════════════════════════════════════════════════════════╝
+
+1️⃣ REDÉMARREZ FOUNDRY VTT
+   Fermez complètement Foundry et relancez-le
+
+2️⃣ CRÉEZ/OUVREZ UN MONDE
+   Système de jeu : Val'serra
+
+3️⃣ CRÉEZ UN PERSONNAGE
+   Acteurs → Créer un Acteur → Type: Personnage
+
+4️⃣ ADMIREZ LE NOUVEAU DESIGN !
+   • Fond étoilé ✨
+   • Bordures blanches ⚪
+   • 6 onglets : Stats, Esprits, Sorts, Talents, Inventaire, Bio
+
+5️⃣ AJOUTEZ VOS ESPRITS ET SORTS
+   Onglet Esprits → Ajouter → Configurez
+   Onglet Sorts → Ajouter → Liez à un esprit
+
+6️⃣ AJOUTEZ VOS TALENTS DE CLASSE
+   Onglet Talents → Ajouter → Configurez
+
+
+╔════════════════════════════════════════════════════════════════════╗
+║             ⚠️ PROBLÈMES RÉSOLUS                                  ║
+╚════════════════════════════════════════════════════════════════════╝
+
+✅ LOCALISATION CORRIGÉE
+   Avant : "VALSERRA.ActorSheet.Stats.Race" s'affichait
+   Maintenant : "RACE" s'affiche correctement
+   
+   → Tous les labels sont maintenant en dur dans les templates
+   → Plus besoin de fichier de traduction complexe
+   → Tout fonctionne immédiatement
+
+✅ CSS RÉORGANISÉ
+   Avant : 1 gros fichier de 700+ lignes
+   Maintenant : 7 fichiers modulaires
+   
+   → variables.css   : Couleurs et espacements
+   → starfield.css   : Effet étoilé
+   → layout.css      : Structure générale
+   → header.css      : En-têtes
+   → components.css  : Boutons, items, forms
+   → actors.css      : Stats, compétences
+   → chat.css        : Messages
+
+✅ SÉPARATION SORTS/TALENTS
+   Avant : Type "Capacité" unique (confus)
+   Maintenant : 
+   • SORTS = Magie des esprits (évolutifs)
+   • TALENTS = Compétences de classe (fréquence)
+
+
+╔════════════════════════════════════════════════════════════════════╗
+║                📂 STRUCTURE DES FICHIERS                          ║
+╚════════════════════════════════════════════════════════════════════╝
+
+systems/valserra/
+│
+├── 📄 Configuration
+│   ├── system.json        ← V13, version 1.1.0
+│   ├── template.json      ← 3 acteurs, 4 items
+│   └── lang/fr.json       ← Traductions (optionnelles)
+│
+├── 💻 Code JavaScript
+│   └── module/
+│       ├── main.js
+│       ├── documents/
+│       │   ├── actor.js
+│       │   └── item.js
+│       └── sheets/
+│           ├── actor-sheet.js
+│           └── item-sheet.js
+│
+├── 🎨 Templates Handlebars
+│   └── templates/sheets/
+│       ├── actor-personnage-sheet.hbs  ← 6 onglets
+│       ├── actor-pnj-sheet.hbs
+│       ├── actor-monstre-sheet.hbs
+│       ├── item-esprit-sheet.hbs
+│       ├── item-sort-sheet.hbs         ← NOUVEAU
+│       ├── item-talent-sheet.hbs       ← NOUVEAU
+│       └── item-equipement-sheet.hbs
+│
+├── 🌌 Styles CSS
+│   └── styles/
+│       ├── style.css         ← Imports
+│       ├── variables.css     ← Couleurs thème sombre
+│       ├── starfield.css     ← Étoiles animées ✨
+│       ├── layout.css        ← Structure gothique
+│       ├── header.css        ← Bannière & PV
+│       ├── components.css    ← Boutons & items
+│       ├── actors.css        ← Stats & compétences
+│       └── chat.css          ← Messages
+│
+└── 📚 Documentation
+    ├── README.md                    ← Vue d'ensemble
+    ├── GUIDE_DEMARRAGE.md          ← Tutoriel
+    ├── EXEMPLES_MACROS.md          ← Macros
+    ├── EXTENSION.md                ← Guide dev
+    ├── CHANGELOG.md                ← Historique
+    ├── CHANGEMENTS_V1.1.md         ← Détails v1.1
+    ├── NOUVEAU_DESIGN.md           ← Docs du design
+    ├── LISEZMOI_CHANGEMENTS.txt    ← Guide changements
+    ├── RESUME_FINAL.md             ← Résumé complet
+    └── A_LIRE_EN_PREMIER.txt       ← Ce fichier
+
+
+╔════════════════════════════════════════════════════════════════════╗
+║              🎯 EXEMPLES DE CRÉATION                              ║
+╚════════════════════════════════════════════════════════════════════╝
+
+CRÉER UN ESPRIT :
+┌────────────────────────────┐
+│ Nom : Ifrit                │
+│ Élément : Feu              │
+│ Niveau : 1 → 5             │
+│ Pacte : "Phoenix Éternel"  │
+└────────────────────────────┘
+
+CRÉER UN SORT :
+┌────────────────────────────────────┐
+│ Nom : Boule de Feu                 │
+│ Esprit : Ifrit                     │
+│ Niveau requis : 3                  │
+│ Coût : 5 énergie                   │
+│ Incantation : 1 action             │
+│ Portée : 30 mètres                 │
+│ Évolutif : ✓                       │
+│ Effet : 3d6 feu (+1d6/niv.)        │
+└────────────────────────────────────┘
+
+CRÉER UN TALENT :
+┌────────────────────────────────┐
+│ Nom : Second Souffle           │
+│ Classe : Guerrier              │
+│ Type : Actif                   │
+│ Fréquence : 1/repos court      │
+│ Effet : Récupère 1d10+niv PV   │
+└────────────────────────────────┘
+
+
+╔════════════════════════════════════════════════════════════════════╗
+║                 🎨 PERSONNALISER LES COULEURS                     ║
+╚════════════════════════════════════════════════════════════════════╝
+
+Éditez : styles/variables.css
+
+/* Couleurs principales */
+--valserra-primary: #1a1d3a;      ← Fond principal
+--valserra-accent: #6b7fd7;       ← Bleu d'accent
+--valserra-border: #ffffff;       ← Bordures blanches
+--valserra-danger: #d74a4a;       ← Rouge (PV)
+--valserra-success: #4a9d6f;      ← Vert (talents)
+
+
+╔════════════════════════════════════════════════════════════════════╗
+║                  📖 DOCUMENTATION DISPONIBLE                      ║
+╚════════════════════════════════════════════════════════════════════╝
+
+👉 LISEZMOI_CHANGEMENTS.txt  ← Guide visuel des changements
+👉 NOUVEAU_DESIGN.md         ← Documentation du design complet
+👉 RESUME_FINAL.md           ← Résumé technique détaillé
+👉 GUIDE_DEMARRAGE.md        ← Tutoriel pas à pas
+👉 EXEMPLES_MACROS.md        ← Macros pour automatiser
+👉 EXTENSION.md              ← Guide pour développeurs
+
+
+╔════════════════════════════════════════════════════════════════════╗
+║                  🎉 C'EST PRÊT !                                  ║
+╚════════════════════════════════════════════════════════════════════╝
+
+VOTRE SYSTÈME VAL'SERRA INCLUT :
+
+✨ Design gothique étoilé magnifique
+🧙 Système de magie via esprits (8 éléments)
+⚔️ Système de talents de classe
+📊 6 caractéristiques + 13 compétences
+🎲 Jets de dés automatisés
+💬 Messages de chat stylisés
+📦 3 types d'acteurs (Personnage, PNJ, Monstre)
+🎒 4 types d'items (Esprit, Sort, Talent, Équipement)
+
+
+════════════════════════════════════════════════════════════════════
+
+                  🎮 REDÉMARREZ FOUNDRY ET JOUEZ ! 🎮
+
+════════════════════════════════════════════════════════════════════
+
+
+                    Créé avec ❤️ par Warwiren
+                    Pour l'univers de Val'serra
+                    Version 1.1.0 - 4 novembre 2025
+
+
+════════════════════════════════════════════════════════════════════
+

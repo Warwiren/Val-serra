@@ -1,0 +1,335 @@
+/**
+ * Composants réutilisables - Thème Gothique
+ */
+
+/* Formulaires d'items */
+.valserra.sheet.item {
+  min-height: 500px;
+  background: var(--valserra-bg-primary);
+}
+
+.valserra.sheet.item .sheet-body {
+  background: var(--valserra-bg-primary);
+}
+
+.valserra.sheet.item .form-group {
+  margin-bottom: var(--valserra-spacing-md);
+}
+
+.valserra.sheet.item .form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: var(--valserra-spacing-xs);
+  color: rgba(240, 240, 245, 0.9);
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+.valserra.sheet.item .form-group input,
+.valserra.sheet.item .form-group select,
+.valserra.sheet.item .form-group textarea {
+  width: 100%;
+  padding: var(--valserra-spacing-sm);
+  border: var(--valserra-border-width) solid var(--valserra-border);
+  background: var(--valserra-bg-dark);
+  color: var(--valserra-light);
+  border-radius: 0;
+  font-family: inherit;
+  transition: var(--valserra-transition);
+}
+
+.valserra.sheet.item .form-group input:focus,
+.valserra.sheet.item .form-group select:focus,
+.valserra.sheet.item .form-group textarea:focus {
+  outline: none;
+  border-color: var(--valserra-accent);
+  box-shadow: var(--valserra-shadow-glow);
+}
+
+.valserra.sheet.item .form-group textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.valserra.sheet.item .form-row {
+  display: flex;
+  gap: var(--valserra-spacing-md);
+}
+
+.valserra.sheet.item .form-row .form-group {
+  flex: 1;
+}
+
+.valserra.sheet.item .help-text {
+  font-size: 11px;
+  color: rgba(240, 240, 245, 0.5);
+  font-style: italic;
+  margin-top: var(--valserra-spacing-xs);
+}
+
+/* Boutons d'utilisation */
+.valserra.sheet.item .use-sort,
+.valserra.sheet.item .use-talent {
+  width: 100%;
+  padding: var(--valserra-spacing-md);
+  background: transparent;
+  border: var(--valserra-border-width) solid var(--valserra-accent);
+  color: var(--valserra-accent);
+  border-radius: 0;
+  font-weight: bold;
+  font-size: 12px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: var(--valserra-transition);
+}
+
+.valserra.sheet.item .use-sort:hover,
+.valserra.sheet.item .use-talent:hover {
+  background: var(--valserra-accent);
+  color: var(--valserra-dark);
+  box-shadow: var(--valserra-shadow-glow);
+}
+
+/* Bouton de création d'items */
+.valserra .item-create {
+  width: 100%;
+  padding: var(--valserra-spacing-md);
+  background: transparent;
+  border: var(--valserra-border-width) solid var(--valserra-success);
+  color: var(--valserra-success);
+  border-radius: 0;
+  font-weight: bold;
+  font-size: 11px;
+  cursor: pointer;
+  margin-bottom: var(--valserra-spacing-md);
+  transition: var(--valserra-transition);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.valserra .item-create:hover {
+  background: var(--valserra-success);
+  color: var(--valserra-dark);
+  box-shadow: 0 0 10px rgba(74, 157, 111, 0.5);
+}
+
+/* Liste d'items */
+.valserra .items-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--valserra-spacing-sm);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.valserra .item {
+  display: flex;
+  align-items: center;
+  gap: var(--valserra-spacing-md);
+  padding: var(--valserra-spacing-md);
+  background: var(--valserra-bg-dark);
+  border: var(--valserra-border-width) solid rgba(255, 255, 255, 0.3);
+  border-radius: 0;
+  transition: var(--valserra-transition);
+  position: relative;
+}
+
+/* Coins ornementaux pour items */
+.valserra .item::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: 8px;
+  height: 8px;
+  border-top: var(--valserra-border-width) solid var(--valserra-border);
+  border-left: var(--valserra-border-width) solid var(--valserra-border);
+}
+
+.valserra .item::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  right: -1px;
+  width: 8px;
+  height: 8px;
+  border-bottom: var(--valserra-border-width) solid var(--valserra-border);
+  border-right: var(--valserra-border-width) solid var(--valserra-border);
+}
+
+.valserra .item:hover {
+  border-color: var(--valserra-accent);
+  box-shadow: var(--valserra-shadow-glow);
+}
+
+.valserra .item .item-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 0;
+  object-fit: cover;
+  border: var(--valserra-border-width) solid var(--valserra-border);
+}
+
+.valserra .item .item-header {
+  display: flex;
+  align-items: center;
+  gap: var(--valserra-spacing-md);
+  flex: 1;
+}
+
+.valserra .item .item-name {
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--valserra-light);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.valserra .item .item-details {
+  display: flex;
+  gap: var(--valserra-spacing-sm);
+  flex-wrap: wrap;
+  align-items: center;
+  flex: 1;
+}
+
+.valserra .item .item-details span {
+  padding: 4px 8px;
+  background: transparent;
+  border: var(--valserra-border-width) solid rgba(255, 255, 255, 0.3);
+  border-radius: 0;
+  font-size: 10px;
+  font-weight: bold;
+  color: rgba(240, 240, 245, 0.8);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Badges spécifiques */
+.valserra .item .item-element,
+.valserra .item .item-esprit {
+  border-color: var(--valserra-accent);
+  color: var(--valserra-accent);
+}
+
+.valserra .item .item-type,
+.valserra .item .item-classe {
+  border-color: var(--valserra-success);
+  color: var(--valserra-success);
+}
+
+.valserra .item .item-evolutif {
+  border-color: var(--valserra-success);
+  color: var(--valserra-success);
+}
+
+/* Contrôles d'items */
+.valserra .item .item-controls {
+  display: flex;
+  gap: var(--valserra-spacing-xs);
+}
+
+.valserra .item .item-control {
+  padding: var(--valserra-spacing-xs) var(--valserra-spacing-sm);
+  background: transparent;
+  border: var(--valserra-border-width) solid rgba(255, 255, 255, 0.5);
+  color: var(--valserra-light);
+  border-radius: 0;
+  cursor: pointer;
+  transition: var(--valserra-transition);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.valserra .item .item-control:hover {
+  background: var(--valserra-accent);
+  border-color: var(--valserra-accent);
+  color: var(--valserra-dark);
+}
+
+.valserra .item .item-delete:hover {
+  background: var(--valserra-danger);
+  border-color: var(--valserra-danger);
+}
+
+/* Table d'équipement */
+.valserra .equipment-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--valserra-bg-dark);
+  border: var(--valserra-border-width) solid var(--valserra-border);
+  table-layout: auto;
+}
+
+.valserra .equipment-table thead {
+  background: var(--valserra-bg-secondary);
+  border-bottom: var(--valserra-border-width) solid var(--valserra-border);
+}
+
+.valserra .equipment-table th {
+  padding: var(--valserra-spacing-sm);
+  text-align: left;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 10px;
+  color: rgba(240, 240, 245, 0.7);
+  letter-spacing: 1px;
+}
+
+.valserra .equipment-table tbody tr {
+  border-bottom: var(--valserra-border-width) solid rgba(255, 255, 255, 0.1);
+  transition: background 0.2s;
+}
+
+.valserra .equipment-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.valserra .equipment-table td {
+  padding: var(--valserra-spacing-sm);
+  color: var(--valserra-light);
+}
+
+.valserra .equipment-table .item-image {
+  width: 32px;
+  height: 32px;
+  vertical-align: middle;
+  margin-right: var(--valserra-spacing-sm);
+  border: var(--valserra-border-width) solid var(--valserra-border);
+}
+
+/* Éditeur enrichi */
+.valserra .editor-content .editor {
+  background: var(--valserra-bg-dark);
+  border: var(--valserra-border-width) solid var(--valserra-border);
+  color: var(--valserra-light);
+  min-height: 200px;
+}
+
+.valserra .editor-content .editor .editor-content {
+  color: var(--valserra-light);
+}
+
+/* ProseMirror editor styles */
+.valserra .editor .ProseMirror {
+  color: var(--valserra-light);
+  background: var(--valserra-bg-dark);
+  padding: var(--valserra-spacing-md);
+}
+
+.valserra .editor .ProseMirror p {
+  color: var(--valserra-light);
+}
+
+/* Description dans les items */
+.valserra .item .item-description {
+  font-size: 11px;
+  color: rgba(240, 240, 245, 0.7);
+  font-style: italic;
+  margin: var(--valserra-spacing-xs) 0;
+}

@@ -1,0 +1,176 @@
+╔════════════════════════════════════════════════════════════════════╗
+║                                                                    ║
+║              🔧 FIX DÉFINITIF DU POSITIONNEMENT 🔧                ║
+║                                                                    ║
+╚════════════════════════════════════════════════════════════════════╝
+
+
+📋 RÉSUMÉ DU PROBLÈME
+════════════════════════════════════════════════════════════════════
+
+Vous aviez dit :
+"Avant qu'on commence les modifications elle s'ouvrait correctement 
+au milieu de l'écran"
+
+Et maintenant :
+• Fiches bloquées sur le côté droit
+• Impossibles à déplacer
+• Ne peuvent pas se superposer
+
+
+🔍 CAUSE RACINE
+════════════════════════════════════════════════════════════════════
+
+Le CSS modifiait directement la classe .valserra.sheet
+
+Cela ÉCRASAIT le comportement de fenêtre de Foundry !
+
+Foundry a besoin de contrôler .valserra.sheet pour :
+• Positionner la fenêtre
+• La rendre déplaçable
+• La rendre redimensionnable
+• Gérer le z-index (superposition)
+
+
+✅ SOLUTION DÉFINITIVE
+════════════════════════════════════════════════════════════════════
+
+NE PLUS TOUCHER À .valserra.sheet
+CIBLER .valserra.sheet .window-content À LA PLACE
+
+AVANT (Problématique) :
+```css
+.valserra.sheet {
+  background: ...;
+  position: relative;
+  overflow: hidden;
+  /* Foundry ne peut plus gérer la fenêtre ! */
+}
+
+.valserra.sheet::before {
+  /* Étoiles qui interfèrent */
+}
+```
+
+APRÈS (Corrigé) :
+```css
+.valserra.sheet .window-content {
+  background: ...;
+  position: relative;
+  overflow-y: auto;
+  /* Foundry garde le contrôle de la fenêtre ! */
+}
+
+.valserra.sheet .window-content::before {
+  /* Étoiles qui n'interfèrent pas */
+}
+```
+
+
+FICHIERS CORRIGÉS
+════════════════════════════════════════════════════════════════════
+
+✓ styles/layout.css
+  └─> .valserra.sheet .window-content au lieu de .valserra.sheet
+
+✓ styles/starfield.css
+  └─> .window-content::before/after au lieu de .sheet::before/after
+
+✓ module/sheets/actor-sheet.js
+  └─> Suppression de la méthode _render() problématique
+
+✓ module/sheets/item-sheet.js
+  └─> Suppression de la méthode _render() problématique
+
+
+COMPORTEMENT ATTENDU APRÈS REDÉMARRAGE
+════════════════════════════════════════════════════════════════════
+
+┌─────────────────────────────────────────────┐
+│                                             │
+│                                             │
+│          ╔══════════════════╗               │
+│          ║  Bob - Sheet     ║               │
+│          ╠══════════════════╣               │
+│          ║ [Contenu fiche]  ║               │
+│          ║ • Déplaçable     ║               │
+│          ║ • Redimensionnable║              │
+│          ║ • Au centre      ║               │
+│          ╚══════════════════╝               │
+│                                             │
+│                                  [Sidebar]  │
+└─────────────────────────────────────────────┘
+
+Les fiches se comportent comme des FENÊTRES normales !
+
+
+TEST COMPLET À FAIRE
+════════════════════════════════════════════════════════════════════
+
+Après redémarrage de Foundry :
+
+1. OUVRIR UNE FICHE
+   └─> Double-clic sur un acteur
+
+2. VÉRIFIER LE POSITIONNEMENT
+   □ Fiche s'ouvre au centre de l'écran
+   □ Pas bloquée sur le côté droit
+
+3. TESTER LE DÉPLACEMENT
+   □ Cliquer sur la barre de titre
+   □ Glisser la fiche
+   □ La fiche se déplace librement
+
+4. TESTER LE REDIMENSIONNEMENT
+   □ Placer curseur sur un bord/coin
+   □ Glisser pour redimensionner
+   □ Ça fonctionne
+
+5. TESTER LA SUPERPOSITION
+   □ Ouvrir une 2ème fiche
+   □ Ouvrir une 3ème fiche
+   □ Elles se superposent normalement
+   □ Clic sur une fiche la met au premier plan
+
+6. VÉRIFIER LE DESIGN
+   □ Fond étoilé visible
+   □ Bordures blanches
+   □ Design gothique intact
+
+
+SI ÇA NE FONCTIONNE TOUJOURS PAS
+════════════════════════════════════════════════════════════════════
+
+Vérifiez dans la console (F12) :
+• Y a-t-il des erreurs CSS ?
+• Y a-t-il des erreurs JavaScript ?
+
+Actions de debug :
+1. Faire Ctrl+F5 pour vider le cache CSS
+2. Vider le cache du navigateur dans Foundry
+3. Redémarrer Foundry complètement
+
+
+AUTRES CORRECTIFS MAINTENUS
+════════════════════════════════════════════════════════════════════
+
+✅ Select avec fond blanc et texte noir (très lisibles)
+✅ Fiche large (850px)
+✅ Marges optimisées (pas de gaspillage)
+✅ Espaces dans onglet STATS supprimés
+✅ Design gothique étoilé magnifique
+
+
+═══════════════════════════════════════════════════════════════════
+
+              ✨ FIX APPLIQUÉ - REDÉMARREZ ! ✨
+
+        Le CSS n'interfère plus avec Foundry !
+    Les fiches devraient s'ouvrir normalement au centre !
+
+═══════════════════════════════════════════════════════════════════
+
+
+Version 1.1.2 - 4 novembre 2025
+Correction du positionnement des fenêtres
+

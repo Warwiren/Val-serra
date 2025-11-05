@@ -1,0 +1,71 @@
+═══════════════════════════════════════════════════════════════════
+                  ✅ PROBLÈMES RÉSOLUS ✅
+═══════════════════════════════════════════════════════════════════
+
+
+🔧 PROBLÈME 1 : SELECT PEU LISIBLES
+───────────────────────────────────────────────────────────────────
+
+Vous aviez dit :
+"Les select sont très gris avec les textes en blanc sur les 
+déroulés donc on ne voit pas grand chose."
+
+✅ RÉSOLU :
+   • Select avec fond BLANC (#e8e8f0)
+   • Texte NOIR (#1a1a1a)
+   • Bordure BLEUE épaisse
+   • Contraste maximum pour lisibilité parfaite
+
+FICHIER CRÉÉ : styles/forms.css
+
+
+🔧 PROBLÈME 2 : FICHE AVEC GROSSES MARGES
+───────────────────────────────────────────────────────────────────
+
+Vous aviez dit :
+"La feuille de personnage est bloquée sur la gauche de l'écran 
+et il y'a de grosse marge qui prennent beaucoup trop d'espace"
+
+✅ RÉSOLU :
+   • Largeur augmentée : 720px → 850px
+   • Marges réduites : 16px → 12px
+   • Tous les éléments : width: 100%
+   • Box-sizing: border-box partout
+   • Fiche redimensionnable (glissez les bords)
+
+FICHIERS MODIFIÉS :
+   • module/sheets/actor-sheet.js
+   • styles/layout.css
+   • styles/header.css
+   • styles/actors.css
+   • styles/components.css
+
+
+═══════════════════════════════════════════════════════════════════
+                    🚀 POUR APPLIQUER
+═══════════════════════════════════════════════════════════════════
+
+1. REDÉMARREZ FOUNDRY (fermez complètement et relancez)
+2. Ouvrez une fiche de personnage
+3. Vérifiez :
+   ✓ Select avec fond blanc et texte noir
+   ✓ Fiche plus large (850px)
+   ✓ Contenu remplit toute la largeur
+   ✓ Plus de grosses marges inutiles
+
+
+═══════════════════════════════════════════════════════════════════
+                    📖 DOCUMENTATION
+═══════════════════════════════════════════════════════════════════
+
+👉 LISEZ-MOI.txt              ← Guide principal
+👉 CORRECTIFS_v1.1.1.txt      ← Détails des corrections
+👉 A_LIRE_EN_PREMIER.txt      ← Guide visuel complet
+👉 GUIDE_DEMARRAGE.md         ← Tutoriel pas à pas
+
+
+═══════════════════════════════════════════════════════════════════
+                     ✨ VERSION 1.1.1 ✨
+                   4 novembre 2025
+═══════════════════════════════════════════════════════════════════
+

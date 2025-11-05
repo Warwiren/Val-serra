@@ -1,0 +1,463 @@
+<form class="{{cssClass}} flexcol" autocomplete="off">
+
+  {{! Header }}
+  <header class="sheet-header">
+
+    {{! Bannière supérieure avec nom, niveau, classe }}
+    <div class="header-banner">
+      <div class="field-inline">
+        <label>NOM</label>
+        <input
+          name="name"
+          type="text"
+          value="{{actor.name}}"
+          placeholder="Nom du personnage"
+        />
+      </div>
+      <div class="field-inline">
+        <label>NIVEAU</label>
+        <input
+          type="number"
+          name="system.niveau"
+          value="{{system.niveau}}"
+        />
+      </div>
+      <div class="field-inline">
+        <label>CLASSE</label>
+        <input type="text" name="system.classe" value="{{system.classe}}" />
+      </div>
+    </div>
+
+    {{! Section centrale avec image et PV }}
+    <div class="header-main">
+      <div class="resources-left">
+        <div class="martial-display">
+          <label>MARTIAL</label>
+          <div class="martial-values">
+            <input type="number" name="system.martial.value" value="{{system.martial.value}}" class="martial-current" />
+            <span class="separator">/</span>
+            <input type="number" name="system.martial.max" value="{{system.martial.max}}" class="martial-max" />
+          </div>
+        </div>
+
+        <div class="armure-display">
+          <label>ARMURE (CA)</label>
+          <div class="armure-value">
+            <input type="number" name="system.armure" value="{{system.armure}}" class="armure" disabled />
+          </div>
+        </div>
+      </div>
+
+      <div class="profile-section center">
+        <img
+          class="profile-img large"
+          src="{{actor.img}}"
+          data-edit="img"
+          title="{{actor.name}}"
+        />
+      </div>
+
+      <div class="resources-right">
+        <div class="pv-display">
+          <label>PV</label>
+          <div class="pv-values">
+            <input
+              type="number"
+              name="system.pv.value"
+              value="{{system.pv.value}}"
+              class="pv-current"
+            />
+            <span class="separator">/</span>
+            <input
+              type="number"
+              name="system.pv.max"
+              value="{{system.pv.max}}"
+              class="pv-max"
+            />
+          </div>
+          <div class="pv-temp-field">
+            <label>TEMP</label>
+            <input
+              type="number"
+              name="system.pv.temp"
+              value="{{system.pv.temp}}"
+              class="pv-temp"
+            />
+          </div>
+        </div>
+
+        <div class="mana-display">
+          <label>MANA</label>
+          <div class="mana-values">
+            <input type="number" name="system.mana.value" value="{{system.mana.value}}" class="mana-current" />
+            <span class="separator">/</span>
+            <input type="number" name="system.mana.max" value="{{system.mana.max}}" class="mana-max" />
+          </div>
+          <div class="mana-temp-field">
+            <label>TEMP</label>
+            <input
+              type="number"
+              name="system.mana.temp"
+              value="{{system.mana.temp}}"
+              class="mana-temp"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {{! Détails du personnage }}
+    <div class="header-details">
+      <div class="field">
+        <label>RACE</label>
+        <input type="text" name="system.race" value="{{system.race}}" />
+      </div>
+      <div class="field">
+        <label>EXPÉRIENCE</label>
+        <input
+          type="number"
+          name="system.experience"
+          value="{{system.experience}}"
+        />
+      </div>
+      <div class="field">
+        <label>ALIGNEMENT</label>
+        <input
+          type="text"
+          name="system.alignement"
+          value="{{system.alignement}}"
+        />
+      </div>
+    </div>
+
+  </header>
+
+  {{! Navigation Tabs }}
+  <nav class="sheet-tabs tabs" data-group="primary">
+    <a class="item" data-tab="stats">STATISTIQUES</a>
+    <a class="item" data-tab="esprits">ESPRITS</a>
+    <a class="item" data-tab="sorts">SORTS</a>
+    <a class="item" data-tab="talents">TALENTS</a>
+    <a class="item" data-tab="inventaire">INVENTAIRE</a>
+    <a class="item" data-tab="biographie">BIOGRAPHIE</a>
+  </nav>
+
+  {{! Sheet Body }}
+  <section class="sheet-body">
+
+    {{! Onglet Stats }}
+    <div class="tab stats" data-group="primary" data-tab="stats">
+
+      {{! Caractéristiques en cercles }}
+      <div class="caracteristiques-section framed-section">
+        <h3>CARACTÉRISTIQUES</h3>
+        <div class="caracteristiques-grid">
+          {{#each system.caracteristiques}}
+            <div class="caracteristique">
+              <label>{{@key}}</label>
+              <div class="carac-content">
+                <input
+                  type="number"
+                  name="system.caracteristiques.{{@key}}.value"
+                  value="{{this.value}}"
+                />
+              </div>
+            </div>
+          {{/each}}
+        </div>
+      </div>
+
+      {{! Compétences }}
+      <div class="competences-section framed-section">
+        <h3>COMPÉTENCES</h3>
+        <table class="competences-table">
+          <thead>
+            <tr>
+              <th style="width: 30px;"></th>
+              <th>Compétence</th>
+              <th style="width: 80px;">Valeur</th>
+              <th style="width: 150px;">Rang</th>
+              <th style="width: 60px;">Total</th>
+              <th style="width: 50px;">Jet</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each system.competences}}
+              <tr class="competence">
+                <td>
+                  <input
+                    type="checkbox"
+                    name="system.competences.{{@key}}.trained"
+                    {{checked this.trained}}
+                  />
+                </td>
+                <td class="comp-name">{{@key}}</td>
+                <td>
+                  <input
+                    type="number"
+                    name="system.competences.{{@key}}.value"
+                    value="{{this.value}}"
+                  />
+                </td>
+                <td>
+                  <select name="system.competences.{{@key}}.rang">
+                    <option
+                      value="non-entrainé"
+                      {{#if (eq this.rang "non-entrainé")}}selected{{/if}}
+                    >
+                      Non-entraîné
+                    </option>
+                    <option
+                      value="novice"
+                      {{#if (eq this.rang "novice")}}selected{{/if}}
+                    >
+                      Novice
+                    </option>
+                    <option
+                      value="intermédiaire"
+                      {{#if (eq this.rang "intermédiaire")}}selected{{/if}}
+                    >
+                      Intermédiaire
+                    </option>
+                    <option
+                      value="expert"
+                      {{#if (eq this.rang "expert")}}selected{{/if}}
+                    >
+                      Expert
+                    </option>
+                    <option
+                      value="maitre"
+                      {{#if (eq this.rang "maitre")}}selected{{/if}}
+                    >
+                      Maître
+                    </option>
+                  </select>
+                </td>
+                <td class="total">{{this.total}}</td>
+                <td>
+                  <button
+                    class="competence-roll"
+                    type="button"
+                    data-competence="{{@key}}"
+                  >
+                    <i class="fas fa-dice-d20"></i>
+                  </button>
+                </td>
+              </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+    {{! Onglet Esprits }}
+    <div class="tab esprits" data-group="primary" data-tab="esprits">
+      <div class="framed-section">
+        <h3>ESPRITS LIÉS</h3>
+        <button class="item-create" type="button" data-type="esprit">
+          <i class="fas fa-plus"></i>
+          AJOUTER UN ESPRIT
+        </button>
+
+        <div class="items-list">
+          {{#each esprits}}
+            <div class="item esprit" data-item-id="{{this._id}}">
+              <div class="item-header">
+                <img
+                  src="{{this.img}}"
+                  alt="{{this.name}}"
+                  class="item-image"
+                />
+                <h4 class="item-name">{{this.name}}</h4>
+              </div>
+              <div class="item-details">
+                <span class="item-element">{{this.system.element}}</span>
+                <span class="item-niveau">Niv. {{this.system.niveau}}/{{this.system.niveauMax}}</span>
+              </div>
+              <div class="item-controls">
+                <a class="item-control item-edit" title="Éditer"><i
+                    class="fas fa-edit"
+                  ></i></a>
+                <a class="item-control item-delete" title="Supprimer"><i
+                    class="fas fa-trash"
+                  ></i></a>
+              </div>
+            </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+
+    {{! Onglet Sorts }}
+    <div class="tab sorts" data-group="primary" data-tab="sorts">
+      <div class="framed-section">
+        <h3>SORTS</h3>
+        <button class="item-create" type="button" data-type="sort">
+          <i class="fas fa-plus"></i>
+          AJOUTER UN SORT
+        </button>
+
+        <div class="items-list">
+          {{#each sorts}}
+            <div class="item sort" data-item-id="{{this._id}}">
+              <div class="item-header">
+                <img
+                  src="{{this.img}}"
+                  alt="{{this.name}}"
+                  class="item-image"
+                />
+                <h4 class="item-name">{{this.name}}</h4>
+              </div>
+              <div class="item-details">
+                <span class="item-esprit">🔮 {{this.system.espritSource}}</span>
+                <span class="item-cost">💧 {{this.system.coutEnergie}}</span>
+                <span class="item-niveau">Niv. {{this.system.niveauEspritRequis}}+</span>
+                {{#if this.system.evolutif}}
+                  <span class="item-evolutif">⬆️ ÉVOLUTIF</span>
+                {{/if}}
+              </div>
+              <div class="item-controls">
+                <a class="item-control item-use" title="Lancer"><i
+                    class="fas fa-magic"
+                  ></i></a>
+                <a class="item-control item-edit" title="Éditer"><i
+                    class="fas fa-edit"
+                  ></i></a>
+                <a class="item-control item-delete" title="Supprimer"><i
+                    class="fas fa-trash"
+                  ></i></a>
+              </div>
+            </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+
+    {{! Onglet Talents }}
+    <div class="tab talents" data-group="primary" data-tab="talents">
+      <div class="framed-section">
+        <h3>TALENTS DE CLASSE</h3>
+        <button class="item-create" type="button" data-type="talent">
+          <i class="fas fa-plus"></i>
+          AJOUTER UN TALENT
+        </button>
+
+        <div class="items-list">
+          {{#each talents}}
+            <div class="item talent" data-item-id="{{this._id}}">
+              <div class="item-header">
+                <img
+                  src="{{this.img}}"
+                  alt="{{this.name}}"
+                  class="item-image"
+                />
+                <h4 class="item-name">{{this.name}}</h4>
+              </div>
+              <div class="item-details">
+                <span class="item-classe">📚 {{this.system.classeSource}}</span>
+                <span class="item-type-talent">{{this.system.type}}</span>
+                <span class="item-frequence">🔄 {{this.system.frequence}}</span>
+              </div>
+              <div class="item-controls">
+                <a class="item-control item-use" title="Utiliser"><i
+                    class="fas fa-fist-raised"
+                  ></i></a>
+                <a class="item-control item-edit" title="Éditer"><i
+                    class="fas fa-edit"
+                  ></i></a>
+                <a class="item-control item-delete" title="Supprimer"><i
+                    class="fas fa-trash"
+                  ></i></a>
+              </div>
+            </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+
+    {{! Onglet Inventaire }}
+    <div class="tab inventaire" data-group="primary" data-tab="inventaire">
+      <div class="framed-section">
+        <h3>INVENTAIRE</h3>
+        <button class="item-create" type="button" data-type="equipement">
+          <i class="fas fa-plus"></i>
+          AJOUTER UN ÉQUIPEMENT
+        </button>
+
+        <table class="equipment-table">
+          <thead>
+            <tr>
+              <th>Nom</th>
+              <th>Type</th>
+              <th style="width: 60px;">Qté</th>
+              <th style="width: 80px;">Équipé</th>
+              <th style="width: 100px;">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each equipements}}
+              <tr class="item equipement" data-item-id="{{this._id}}">
+                <td>
+                  <img
+                    src="{{this.img}}"
+                    alt="{{this.name}}"
+                    class="item-image"
+                  />
+                  <span class="item-name">{{this.name}}</span>
+                </td>
+                <td>{{this.system.type}}</td>
+                <td>{{this.system.quantite}}</td>
+                <td class="center">
+                  <input
+                    type="checkbox"
+                    name="items.{{this._id}}.system.equipe"
+                    {{checked this.system.equipe}}
+                  />
+                </td>
+                <td class="item-controls">
+                  <a class="item-control item-edit" title="Éditer"><i
+                      class="fas fa-edit"
+                    ></i></a>
+                  <a class="item-control item-delete" title="Supprimer"><i
+                      class="fas fa-trash"
+                    ></i></a>
+                </td>
+              </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    {{! Onglet Biographie }}
+    <div class="tab biographie" data-group="primary" data-tab="biographie">
+      <div class="framed-section">
+        <h3>BIOGRAPHIE</h3>
+        <div class="editor-content">
+          {{editor
+            enrichedBiographie
+            target="system.biographie"
+            button=true
+            owner=owner
+            editable=editable
+          }}
+        </div>
+      </div>
+
+      <div class="framed-section">
+        <h3>NOTES</h3>
+        <div class="editor-content">
+          {{editor
+            enrichedNotes
+            target="system.notes"
+            button=true
+            owner=owner
+            editable=editable
+          }}
+        </div>
+      </div>
+    </div>
+
+  </section>
+</form>

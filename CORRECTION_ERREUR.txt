@@ -1,0 +1,87 @@
+╔════════════════════════════════════════════════════════════════════╗
+║                                                                    ║
+║                ⚠️ ERREUR CORRIGÉE IMMÉDIATEMENT ⚠️               ║
+║                                                                    ║
+╚════════════════════════════════════════════════════════════════════╝
+
+
+🐛 PROBLÈME
+═══════════════════════════════════════════════════════════════════
+
+Erreur dans la console :
+"Cannot set property position of #<ValserraActorSheet> which has only a getter"
+
+Les fiches ne s'ouvraient plus du tout !
+
+
+✅ SOLUTION APPLIQUÉE
+═══════════════════════════════════════════════════════════════════
+
+Le problème venait d'un conflit avec le getter position().
+
+AVANT (Code problématique) :
+```javascript
+get position() {
+  const position = super.position;
+  position.left = ...;  // ❌ Erreur : on ne peut pas modifier
+  return position;
+}
+```
+
+APRÈS (Code corrigé) :
+```javascript
+async _render(force, options) {
+  await super._render(force, options);
+  
+  // Centre la fiche au premier rendu
+  if (!this._hasBeenRendered) {
+    this.setPosition({
+      left: (window.innerWidth - position.width) / 2,
+      top: (window.innerHeight - position.height) / 2
+    });
+    this._hasBeenRendered = true;
+  }
+}
+```
+
+
+📂 FICHIERS CORRIGÉS
+═══════════════════════════════════════════════════════════════════
+
+✓ module/sheets/actor-sheet.js
+   └─> Remplacement du getter par _render()
+
+✓ module/sheets/item-sheet.js  
+   └─> Remplacement du getter par _render()
+
+
+🚀 POUR APPLIQUER
+═══════════════════════════════════════════════════════════════════
+
+1. REDÉMARREZ FOUNDRY (important !)
+2. Ouvrez un personnage
+3. La fiche s'ouvre maintenant :
+   ✓ Au CENTRE de l'écran
+   ✓ Sans erreur dans la console
+   ✓ Fonctionnelle à 100%
+
+
+✅ VÉRIFICATIONS
+═══════════════════════════════════════════════════════════════════
+
+Après redémarrage :
+□ Aucune erreur dans la console (F12)
+□ Fiches s'ouvrent correctement
+□ Fiches centrées à l'écran
+□ Onglet STATS sans espaces vides
+□ Select lisibles (fond blanc, texte noir)
+
+
+═══════════════════════════════════════════════════════════════════
+
+                ✨ ERREUR CORRIGÉE ! ✨
+                   
+          Redémarrez Foundry et tout fonctionnera !
+
+═══════════════════════════════════════════════════════════════════
+

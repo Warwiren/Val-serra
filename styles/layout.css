@@ -1,0 +1,309 @@
+/**
+ * Structure et layout - Thème Gothique Étoilé
+ */
+
+/* Styles généraux */
+.valserra {
+  font-family: "Signika", "Palatino Linotype", serif;
+  color: var(--valserra-light);
+}
+
+/* Laisser Foundry gérer la fenêtre elle-même */
+/* On applique nos styles uniquement au contenu */
+.valserra.sheet.app {
+  /* Foundry gère le positionnement */
+}
+
+.valserra.sheet .window-content {
+  background: var(--valserra-bg-primary);
+  position: relative;
+  overflow-y: auto;
+}
+
+/* Style pour la barre de titre Foundry */
+.valserra.sheet .window-header {
+  background: var(--valserra-bg-secondary);
+  border-bottom: var(--valserra-border-width) solid var(--valserra-border);
+}
+
+.valserra.sheet .window-title {
+  color: var(--valserra-light);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.valserra.sheet h1,
+.valserra.sheet h2,
+.valserra.sheet h3 {
+  font-family: "Modesto Condensed", "Palatino Linotype", serif;
+  font-weight: bold;
+  color: var(--valserra-light);
+  border-bottom: var(--valserra-border-width) solid var(--valserra-border);
+  padding-bottom: var(--valserra-spacing-sm);
+  margin-top: 0;
+  margin-bottom: var(--valserra-spacing-sm);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* En-tête avec bannière gothique */
+.valserra .sheet-header {
+  display: flex;
+  flex-direction: column;
+  background: var(--valserra-bg-dark);
+  border-bottom: var(--valserra-border-width) solid var(--valserra-border);
+  padding: 0;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Bannière supérieure */
+.valserra .sheet-header .header-banner {
+  background: linear-gradient(
+    90deg,
+    var(--valserra-bg-secondary) 0%,
+    var(--valserra-bg-dark) 100%
+  );
+  border-bottom: var(--valserra-border-width) solid var(--valserra-border);
+  padding: var(--valserra-spacing-md) var(--valserra-spacing-lg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  clip-path: polygon(0 0, 100% 0, 98% 100%, 0 100%);
+  width: 100%;
+  box-sizing: border-box;
+  gap: var(--valserra-spacing-lg);
+}
+
+.valserra .sheet-header .charname {
+  flex: 1;
+  margin: 0;
+}
+
+.valserra .sheet-header .charname input {
+  font-size: 24px;
+  font-weight: bold;
+  background: transparent;
+  border: none;
+  border-bottom: var(--valserra-border-width) solid var(--valserra-border);
+  color: var(--valserra-light);
+  padding: var(--valserra-spacing-xs);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  width: 100%;
+}
+
+.valserra .sheet-header .charname input::placeholder {
+  color: rgba(240, 240, 245, 0.5);
+}
+
+/* Section centrale avec icônes décorat ives */
+.valserra .sheet-header .header-decorative {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--valserra-spacing-lg);
+  gap: var(--valserra-spacing-xl);
+  background: var(--valserra-bg-primary);
+  border-bottom: var(--valserra-border-width) solid var(--valserra-border);
+}
+
+.valserra .sheet-header .header-icon-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--valserra-spacing-sm);
+}
+
+/* Détails du personnage */
+.valserra .sheet-header .header-details {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--valserra-spacing-md);
+  padding: var(--valserra-spacing-md) var(--valserra-spacing-lg);
+  background: var(--valserra-bg-secondary);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.valserra .sheet-header .field {
+  display: flex;
+  flex-direction: column;
+}
+
+.valserra .sheet-header .field label {
+  font-size: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: var(--valserra-spacing-xs);
+  color: rgba(240, 240, 245, 0.7);
+}
+
+.valserra .sheet-header .field input,
+.valserra .sheet-header .field select {
+  background: var(--valserra-bg-dark);
+  border: var(--valserra-border-width) solid var(--valserra-border);
+  color: var(--valserra-light);
+  padding: var(--valserra-spacing-sm);
+  border-radius: 0;
+  font-size: 14px;
+  transition: var(--valserra-transition);
+}
+
+.valserra .sheet-header .field input:focus,
+.valserra .sheet-header .field select:focus {
+  outline: none;
+  box-shadow: var(--valserra-shadow-glow);
+  border-color: var(--valserra-accent);
+}
+
+/* Onglets gothiques */
+.valserra .sheet-tabs {
+  display: flex;
+  gap: 0;
+  padding: 0;
+  background: var(--valserra-bg-dark);
+  border-bottom: var(--valserra-border-width) solid var(--valserra-border);
+  margin: 0;
+}
+
+.valserra .sheet-tabs .item {
+  flex: 1;
+  text-align: center;
+  padding: var(--valserra-spacing-md) var(--valserra-spacing-lg);
+  background: transparent;
+  color: rgba(240, 240, 245, 0.6);
+  border: none;
+  border-right: var(--valserra-border-width) solid rgba(255, 255, 255, 0.2);
+  border-radius: 0;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: var(--valserra-transition);
+  position: relative;
+}
+
+.valserra .sheet-tabs .item:last-child {
+  border-right: none;
+}
+
+.valserra .sheet-tabs .item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--valserra-light);
+}
+
+.valserra .sheet-tabs .item.active {
+  background: var(--valserra-bg-primary);
+  color: var(--valserra-light);
+  border-bottom: var(--valserra-border-width-thick) solid var(--valserra-accent);
+}
+
+/* Corps de la fiche */
+.valserra .sheet-body {
+  padding: var(--valserra-spacing-xs);
+  background: var(--valserra-bg-primary);
+  overflow-y: auto;
+  min-height: 600px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.valserra .sheet-body .tab {
+  display: none;
+}
+
+.valserra .sheet-body .tab.active {
+  display: block;
+}
+
+/* Scrollbar personnalisée */
+.valserra .sheet-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.valserra .sheet-body::-webkit-scrollbar-track {
+  background: var(--valserra-bg-dark);
+}
+
+.valserra .sheet-body::-webkit-scrollbar-thumb {
+  background: var(--valserra-accent);
+  border-radius: 0;
+}
+
+.valserra .sheet-body::-webkit-scrollbar-thumb:hover {
+  background: var(--valserra-hover);
+}
+
+/* Sections avec coins ornementaux */
+.valserra .framed-section {
+  background: rgba(37, 40, 73, 0.6);
+  border: var(--valserra-border-width) solid var(--valserra-border);
+  padding: var(--valserra-spacing-xs);
+  margin: 0 0 var(--valserra-spacing-xs) 0;
+  position: relative;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Première section dans un onglet : pas de marge supérieure */
+.valserra .tab > .framed-section:first-child {
+  margin-top: 0;
+}
+
+/* Dernière section : pas de marge inférieure */
+.valserra .tab > .framed-section:last-child {
+  margin-bottom: 0;
+}
+
+/* Coins ornementaux - Style gothique */
+.valserra .framed-section::before,
+.valserra .framed-section::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-color: var(--valserra-border);
+}
+
+.valserra .framed-section::before {
+  top: -1px;
+  left: -1px;
+  border-top: var(--valserra-border-width-thick) solid;
+  border-left: var(--valserra-border-width-thick) solid;
+}
+
+.valserra .framed-section::after {
+  top: -1px;
+  right: -1px;
+  border-top: var(--valserra-border-width-thick) solid;
+  border-right: var(--valserra-border-width-thick) solid;
+}
+
+/* Pseudo-éléments pour coins inférieurs (utiliser des div si besoin) */
+.valserra .framed-section {
+  --corner-size: 16px;
+}
+
+/* Simulation des coins inférieurs avec box-shadow */
+.valserra .framed-section {
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.3),
+    /* Coins inférieurs simulés */ inset 0 -16px 0 -15px var(--valserra-border),
+    inset -16px 0 0 -15px var(--valserra-border);
+}
+
+/* Responsivité */
+@media (max-width: 768px) {
+  .valserra .sheet-header .header-details {
+    grid-template-columns: 1fr;
+  }
+
+  .valserra .sheet-tabs .item {
+    padding: var(--valserra-spacing-sm);
+    font-size: 10px;
+  }
+}

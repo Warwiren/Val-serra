@@ -1,0 +1,241 @@
+╔════════════════════════════════════════════════════════════════════╗
+║                                                                    ║
+║                    VAL'SERRA VERSION 1.1.1                        ║
+║                      PRÊT À JOUER !                               ║
+║                                                                    ║
+╚════════════════════════════════════════════════════════════════════╝
+
+
+🎉 TOUT EST CORRIGÉ ET FONCTIONNEL ! 🎉
+
+
+╔════════════════════════════════════════════════════════════════════╗
+║                  ✅ DERNIERS CORRECTIFS                           ║
+╚════════════════════════════════════════════════════════════════════╝
+
+✅ SELECT/DROPDOWNS LISIBLES
+   • Fond BLANC au lieu de gris foncé
+   • Texte NOIR au lieu de blanc
+   • Parfaitement lisible maintenant !
+
+✅ FICHE PLUS LARGE
+   • 850px au lieu de 720px
+   • Redimensionnable (glissez les bords)
+   • Meilleure utilisation de l'espace
+
+✅ MARGES RÉDUITES
+   • Padding optimisé (12px au lieu de 16px)
+   • Contenu utilise 100% de la largeur
+   • Plus d'espace gaspillé !
+
+
+╔════════════════════════════════════════════════════════════════════╗
+║                   🚀 DÉMARRAGE                                    ║
+╚════════════════════════════════════════════════════════════════════╝
+
+1. REDÉMARREZ FOUNDRY VTT
+   └─> Fermez COMPLÈTEMENT Foundry
+   └─> Relancez l'application
+
+2. OUVREZ VOTRE MONDE
+   └─> Système: Val'serra
+
+3. CRÉEZ/OUVREZ UN PERSONNAGE
+   └─> Acteurs → Créer un Acteur
+   └─> Type: Personnage
+
+4. ADMIREZ LES CHANGEMENTS !
+   └─> Fiche plus large ✓
+   └─> Select lisibles ✓
+   └─> Pas de grosses marges ✓
+
+
+╔════════════════════════════════════════════════════════════════════╗
+║               🎨 CE QUI A ÉTÉ CRÉÉ                                ║
+╚════════════════════════════════════════════════════════════════════╝
+
+TYPES D'ACTEURS (3)
+├─ Personnage  → Fiche complète avec 6 onglets
+├─ PNJ         → Fiche simplifiée
+└─ Monstre     → Fiche combat
+
+TYPES D'ITEMS (4)
+├─ Esprit      → Entité spirituelle (niveaux 1-5)
+├─ Sort        → Magie d'esprit (évolutif)
+├─ Talent      → Compétence de classe
+└─ Équipement  → Objets et armes
+
+ONGLETS PERSONNAGE
+├─ STATISTIQUES → Caractéristiques + Compétences + PV
+├─ ESPRITS      → Esprits liés (8 éléments)
+├─ SORTS        → Magie des esprits
+├─ TALENTS      → Compétences de classe
+├─ INVENTAIRE   → Équipement
+└─ BIOGRAPHIE   → Histoire et notes
+
+SYSTÈME DE JEU
+├─ 6 Caractéristiques (Force, Dex, Con, Int, Sag, Cha)
+├─ 13 Compétences (avec rangs de maîtrise)
+├─ Jets de dés automatiques (clic sur modificateurs)
+├─ Points de Vie (actuels, max, temporaires)
+├─ 8 Éléments (Feu, Eau, Terre, Air, Lumière, Ténèbres, Nature, Arcane)
+└─ Messages de chat stylisés
+
+
+╔════════════════════════════════════════════════════════════════════╗
+║                  🌌 LE THÈME GOTHIQUE ÉTOILÉ                      ║
+╚════════════════════════════════════════════════════════════════════╝
+
+✨ Fond bleu-violet foncé mystique
+⭐ Étoiles blanches scintillantes animées
+⚪ Bordures blanches nettes
+🔷 Coins ornementaux gothiques
+💎 Effet glow bleu au survol
+🎭 Ambiance nocturne immersive
+
+
+╔════════════════════════════════════════════════════════════════════╗
+║               📂 FICHIERS CSS (8 fichiers)                        ║
+╚════════════════════════════════════════════════════════════════════╝
+
+styles/
+├── style.css       → Import principal
+├── variables.css   → Couleurs et espacements
+├── starfield.css   → Étoiles animées ✨
+├── layout.css      → Structure générale
+├── header.css      → En-tête et bannière
+├── forms.css       → 🆕 Formulaires et select
+├── components.css  → Boutons et items
+├── actors.css      → Caractéristiques et compétences
+└── chat.css        → Messages de sorts/talents
+
+
+╔════════════════════════════════════════════════════════════════════╗
+║             📖 DOCUMENTATION (10 fichiers)                        ║
+╚════════════════════════════════════════════════════════════════════╝
+
+GUIDES PRINCIPAUX :
+👉 LISEZ-MOI.txt               ← Vous êtes ici !
+👉 CORRECTIFS_v1.1.1.txt       ← Détails des corrections
+👉 A_LIRE_EN_PREMIER.txt       ← Guide visuel complet
+👉 NOUVEAU_DESIGN.md           ← Documentation du design
+
+GUIDES DÉTAILLÉS :
+📘 GUIDE_DEMARRAGE.md          ← Tutoriel pas à pas
+📘 GUIDE_TEST.md               ← Tests à faire
+📘 EXEMPLES_MACROS.md          ← Macros utiles
+📘 EXTENSION.md                ← Guide développeur
+
+HISTORIQUE :
+📜 CHANGELOG.md                ← Historique complet
+📜 CHANGEMENTS_V1.1.md         ← Changements v1.1
+
+
+╔════════════════════════════════════════════════════════════════════╗
+║                 🎯 EXEMPLE D'UTILISATION                          ║
+╚════════════════════════════════════════════════════════════════════╝
+
+CRÉER UN PERSONNAGE COMPLET
+──────────────────────────────────────────────────────────────────
+
+1. Créer l'acteur
+   Nom: Aria Lunétoile
+   Niveau: 3
+   Classe: Invocatrice
+   Race: Elfe
+
+2. Ajouter un esprit (Onglet ESPRITS)
+   Nom: Ifrit
+   Élément: Feu
+   Niveau: 3
+
+3. Créer des sorts (Onglet SORTS)
+   • Étincelle (Niv. 1) - 1 énergie
+   • Flamme Dansante (Niv. 2) - 3 énergie
+   • Boule de Feu (Niv. 3) - 5 énergie ⬆️ Évolutif
+
+4. Ajouter des talents (Onglet TALENTS)
+   • Lien Spirituel (Passif)
+   • Invocation Rapide (Actif - 1/repos court)
+
+5. Jouer !
+   • Cliquez sur les sorts pour les lancer
+   • Cliquez sur les talents pour les utiliser
+   • Les messages apparaissent dans le chat
+
+
+╔════════════════════════════════════════════════════════════════════╗
+║                  💡 PERSONNALISATION                              ║
+╚════════════════════════════════════════════════════════════════════╝
+
+CHANGER LA LARGEUR DE LA FICHE
+──────────────────────────────────────────────────────────────────
+Fichier : module/sheets/actor-sheet.js
+Ligne 8 : width: 850,  ← Changez ce nombre
+
+CHANGER LES COULEURS
+──────────────────────────────────────────────────────────────────
+Fichier : styles/variables.css
+Modifiez :
+  --valserra-primary: #votre-couleur-fond
+  --valserra-accent: #votre-couleur-accent
+  --valserra-border: #votre-couleur-bordures
+
+DÉSACTIVER LES ÉTOILES
+──────────────────────────────────────────────────────────────────
+Fichier : styles/starfield.css
+Commentez tout le contenu (ajoutez /* au début et */ à la fin)
+
+
+╔════════════════════════════════════════════════════════════════════╗
+║                  🎲 JETS DE DÉS                                   ║
+╚════════════════════════════════════════════════════════════════════╝
+
+CARACTÉRISTIQUES
+└─> Cliquez sur le cercle avec le modificateur
+    Exemple: Force (+2) → Lance 1d20+2
+
+COMPÉTENCES
+└─> Cliquez sur l'icône 🎲
+    Exemple: Acrobatie → Lance 1d20+total
+
+SORTS
+└─> Cliquez sur l'icône 🪄 (magic)
+    Affiche les détails dans le chat
+
+TALENTS
+└─> Cliquez sur l'icône 👊 (fist)
+    Affiche les détails dans le chat
+
+
+╔════════════════════════════════════════════════════════════════════╗
+║                   📝 RÉSUMÉ DES VERSIONS                          ║
+╚════════════════════════════════════════════════════════════════════╝
+
+v1.0.0 - Base du système
+v1.1.0 - Design gothique + Séparation sorts/talents
+v1.1.1 - 🆕 Select lisibles + Marges optimisées
+
+
+╔════════════════════════════════════════════════════════════════════╗
+║                    ✨ C'EST PRÊT ! ✨                             ║
+╚════════════════════════════════════════════════════════════════════╝
+
+Votre système Val'serra est maintenant :
+✅ Fonctionnel à 100%
+✅ Visuellement magnifique
+✅ Facile à utiliser
+✅ Bien documenté
+✅ Prêt pour vos aventures !
+
+
+═══════════════════════════════════════════════════════════════════
+
+                  🎮 BON JEU DANS VAL'SERRA ! 🎮
+
+═══════════════════════════════════════════════════════════════════
+
+
+                      Créé par Warwiren
+                Version 1.1.1 - 4 novembre 2025
+

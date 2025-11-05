@@ -1,34 +1,137 @@
 {
   "Actor": {
-    "types": ["personnage"],
+    "types": ["personnage", "pnj", "monstre"],
     "templates": {
       "base": {
-        "data": {
-          "caracteristiques": {
-            "force": 0,
-            "dexterite": 0,
-            "constitution": 0,
-            "intelligence": 0,
-            "sagesse": 0,
-            "charisme": 0
+        "biographie": "",
+        "notes": "",
+        "pv": {
+          "value": 10,
+          "max": 10,
+          "temp": 0
+        },
+        "mana": {
+          "value": 5,
+          "max": 5,
+          "temp": 0
+        },
+        "martial": {
+          "value": 5,
+          "max": 10
+        },
+        "caracteristiques": {
+          "force": {
+            "value": 0,
+            "mod": 0
           },
-          "competences": {
-            "intimidation": { "valeur": 0, "rang": "non-entrainé" },
-            "acrobatie": { "valeur": 0, "rang": "non-entrainé" },
-            "volonte": { "valeur": 0, "rang": "non-entrainé" },
-            "nature": { "valeur": 0, "rang": "non-entrainé" },
-            "diplomatie": { "valeur": 0, "rang": "non-entrainé" },
-            "discretion": { "valeur": 0, "rang": "non-entrainé" },
-            "arcane": { "valeur": 0, "rang": "non-entrainé" },
-            "medecine": { "valeur": 0, "rang": "non-entrainé" },
-            "performance": { "valeur": 0, "rang": "non-entrainé" },
-            "histoire": { "valeur": 0, "rang": "non-entrainé" },
-            "survie": { "valeur": 0, "rang": "non-entrainé" },
-            "perception": { "valeur": 0, "rang": "non-entrainé" },
-            "intuition": { "valeur": 0, "rang": "non-entrainé" }
+          "dexterite": {
+            "value": 0,
+            "mod": 0
+          },
+          "constitution": {
+            "value": 0,
+            "mod": 0
+          },
+          "intelligence": {
+            "value": 0,
+            "mod": 0
+          },
+          "volonte": {
+            "value": 0,
+            "mod": 0
+          },
+          "charisme": {
+            "value": 0,
+            "mod": 0
           }
+        },
+        "armure": 0,
+        "competences": {
+          "intimidation": { "value": 0, "rang": "non-entrainé" },
+          "acrobatie": { "value": 0, "rang": "non-entrainé" },
+          "volonte": { "value": 0, "rang": "non-entrainé" },
+          "nature": { "value": 0, "rang": "non-entrainé" },
+          "diplomatie": { "value": 0, "rang": "non-entrainé" },
+          "discretion": { "value": 0, "rang": "non-entrainé" },
+          "arcane": { "value": 0, "rang": "non-entrainé" },
+          "medecine": { "value": 0, "rang": "non-entrainé" },
+          "performance": { "value": 0, "rang": "non-entrainé" },
+          "histoire": { "value": 0, "rang": "non-entrainé" },
+          "survie": { "value": 0, "rang": "non-entrainé" },
+          "perception": { "value": 0, "rang": "non-entrainé" },
+          "intuition": { "value": 0, "rang": "non-entrainé" }
         }
       }
+    },
+    "personnage": {
+      "templates": ["base"],
+      "niveau": 1,
+      "experience": 0,
+      "race": "",
+      "classe": "",
+      "alignement": ""
+    },
+    "pnj": {
+      "templates": ["base"],
+      "niveau": 1,
+      "race": "",
+      "role": "",
+      "attitude": "neutre"
+    },
+    "monstre": {
+      "templates": ["base"],
+      "niveau": 1,
+      "type": "",
+      "famille": "",
+      "dangerLevel": 1
+    }
+  },
+  "Item": {
+    "types": ["esprit", "sort", "talent", "equipement"],
+    "templates": {
+      "baseItem": {
+        "description": ""
+      }
+    },
+    "esprit": {
+      "templates": ["baseItem"],
+      "niveau": 1,
+      "niveauMax": 5,
+      "element": "",
+      "pacte": "",
+      "sortsOctroyes": []
+    },
+    "sort": {
+      "templates": ["baseItem"],
+      "espritSource": "",
+      "niveauEspritRequis": 1,
+      "coutEnergie": 0,
+      "tempsDIncantation": "1 action",
+      "portee": "Contact",
+      "duree": "Instantané",
+      "composantes": "",
+      "evolutif": true,
+      "effet": "",
+      "effetNiveauSuperieur": ""
+    },
+    "talent": {
+      "templates": ["baseItem"],
+      "classeSource": "",
+      "niveauRequis": 1,
+      "type": "actif",
+      "frequence": "illimité",
+      "prerequis": "",
+      "effet": ""
+    },
+    "equipement": {
+      "templates": ["baseItem"],
+      "quantite": 1,
+      "poids": 0,
+      "prix": 0,
+      "equipe": false,
+      "type": "autre",
+      "proprietes": "",
+      "armure": 0
     }
   }
 }

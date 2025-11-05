@@ -1,0 +1,122 @@
+<form class="{{cssClass}} flexcol" autocomplete="off">
+
+  {{! Header }}
+  <header class="sheet-header">
+    <div class="header-banner">
+      <div class="field-inline" style="flex: 2;">
+        <label>NOM DU TALENT</label>
+        <input
+          name="name"
+          type="text"
+          value="{{item.name}}"
+          placeholder="Nom du talent"
+        />
+      </div>
+    </div>
+    <div class="header-main">
+      <img
+        class="profile-img"
+        src="{{item.img}}"
+        data-edit="img"
+        title="{{item.name}}"
+      />
+    </div>
+  </header>
+
+  {{! Sheet Body }}
+  <section class="sheet-body">
+
+    <div class="framed-section">
+
+      <div class="form-group">
+        <label>CLASSE SOURCE</label>
+        <input
+          type="text"
+          name="system.classeSource"
+          value="{{system.classeSource}}"
+          placeholder="Guerrier, Mage, Rôdeur..."
+        />
+        <p class="help-text">La classe qui octroie ce talent</p>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>NIVEAU REQUIS</label>
+          <input
+            type="number"
+            name="system.niveauRequis"
+            value="{{system.niveauRequis}}"
+            min="1"
+          />
+        </div>
+
+        <div class="form-group">
+          <label>TYPE</label>
+          <select name="system.type">
+            {{#each typesTalent}}
+              <option
+                value="{{this}}"
+                {{#if (eq ../system.type this)}}selected{{/if}}
+              >
+                {{this}}
+              </option>
+            {{/each}}
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>FRÉQUENCE</label>
+        <select name="system.frequence">
+          {{#each frequencesTalent}}
+            <option
+              value="{{this}}"
+              {{#if (eq ../system.frequence this)}}selected{{/if}}
+            >
+              {{this}}
+            </option>
+          {{/each}}
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>PRÉREQUIS</label>
+        <input
+          type="text"
+          name="system.prerequis"
+          value="{{system.prerequis}}"
+          placeholder="Force 13, talent X, etc."
+        />
+        <p class="help-text">Conditions pour obtenir ce talent (optionnel)</p>
+      </div>
+
+      <div class="form-group editor-content">
+        <label>DESCRIPTION</label>
+        {{editor
+          enrichedDescription
+          target="system.description"
+          button=true
+          owner=owner
+          editable=editable
+        }}
+      </div>
+
+      <div class="form-group">
+        <label>EFFET (MÉCANIQUE)</label>
+        <textarea name="system.effet" rows="4">{{system.effet}}</textarea>
+        <p class="help-text">Bonus, actions spéciales, réactions, etc.</p>
+      </div>
+
+      {{#if owner}}
+        <div class="form-group">
+          <button type="button" class="use-talent">
+            <i class="fas fa-fist-raised"></i>
+            UTILISER LE TALENT
+          </button>
+        </div>
+      {{/if}}
+
+    </div>
+
+  </section>
+</form>

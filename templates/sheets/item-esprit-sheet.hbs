@@ -1,0 +1,93 @@
+<form class="{{cssClass}} flexcol" autocomplete="off">
+
+  {{! Header }}
+  <header class="sheet-header">
+    <div class="header-banner">
+      <div class="field-inline" style="flex: 2;">
+        <label>NOM DE L'ESPRIT</label>
+        <input
+          name="name"
+          type="text"
+          value="{{item.name}}"
+          placeholder="Nom de l'esprit"
+        />
+      </div>
+    </div>
+    <div class="header-main">
+      <img
+        class="profile-img"
+        src="{{item.img}}"
+        data-edit="img"
+        title="{{item.name}}"
+      />
+    </div>
+  </header>
+
+  {{! Sheet Body }}
+  <section class="sheet-body">
+
+    <div class="framed-section">
+
+      <div class="form-group">
+        <label>ÉLÉMENT</label>
+        <select name="system.element">
+          <option value="">Choisir un élément</option>
+          {{#each elements}}
+            <option
+              value="{{this}}"
+              {{#if (eq ../system.element this)}}selected{{/if}}
+            >{{this}}</option>
+          {{/each}}
+        </select>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>NIVEAU ACTUEL</label>
+          <input
+            type="number"
+            name="system.niveau"
+            value="{{system.niveau}}"
+            min="1"
+            max="{{system.niveauMax}}"
+          />
+        </div>
+
+        <div class="form-group">
+          <label>NIVEAU MAXIMUM</label>
+          <input
+            type="number"
+            name="system.niveauMax"
+            value="{{system.niveauMax}}"
+            min="1"
+          />
+        </div>
+      </div>
+
+      <div class="form-group editor-content">
+        <label>DESCRIPTION</label>
+        {{editor
+          enrichedDescription
+          target="system.description"
+          button=true
+          owner=owner
+          editable=editable
+        }}
+      </div>
+
+      <div class="form-group">
+        <label>TYPE DE PACTE</label>
+        <textarea name="system.pacte" rows="3">{{system.pacte}}</textarea>
+        <p class="help-text">Le type de lien ou l'histoire de cet esprit</p>
+      </div>
+
+      <div class="sorts-octroyes">
+        <h3>SORTS OCTROYÉS</h3>
+        <p class="help-text">Les sorts que cet esprit octroie seront listés ici.
+          Créez des items "Sort" et définissez cet esprit comme source.</p>
+      </div>
+
+    </div>
+
+  </section>
+</form>

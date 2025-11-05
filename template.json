@@ -46,6 +46,10 @@
           }
         },
         "armure": 0,
+        "token": {
+          "borderColor": "#ffffff",
+          "borderWidth": 6
+        },
         "competences": {
           "intimidation": { "value": 0, "rang": "non-entrainé" },
           "acrobatie": { "value": 0, "rang": "non-entrainé" },
